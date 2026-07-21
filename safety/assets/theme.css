@@ -1,0 +1,190 @@
+/* VDT Guideline Deck - Shared Theme */
+/* Palette: Health & Safety Green + White */
+
+:root {
+  --green-900: #0f4c3a;
+  --green-700: #1a7a5c;
+  --green-500: #2fa87e;
+  --green-300: #7dd3b3;
+  --green-100: #e6f5ee;
+  --green-50: #f4faf7;
+
+  --ink-900: #12211c;
+  --ink-700: #2c3e37;
+  --ink-500: #55665e;
+  --ink-300: #9aaaa3;
+  --ink-100: #dfe6e2;
+
+  --accent-red: #d94a3d; /* 赤枠強調用 */
+  --accent-red-soft: #fdecea;
+  --accent-amber: #f2a71b; /* 補助アクセント */
+  --accent-amber-soft: #fdf1d6;
+
+  --white: #ffffff;
+  --bg: #f4faf7;
+
+  --font-jp: "Noto Sans JP", "Yu Gothic", "游ゴシック", "Meiryo", sans-serif;
+  --font-num: "Inter", "Noto Sans JP", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--font-jp);
+  color: var(--ink-900);
+  background: var(--bg);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.slide-container {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  background: var(--white);
+}
+
+/* ============ 共通パーツ ============ */
+
+/* ヘッダー帯 */
+.page-header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 88px;
+  background: var(--white);
+  border-bottom: 1px solid var(--ink-100);
+  display: flex;
+  align-items: center;
+  padding: 0 72px;
+  gap: 20px;
+}
+.page-header .badge {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--green-700);
+  padding: 8px 18px;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+.page-header .title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ink-900);
+  letter-spacing: 0.01em;
+}
+.page-header .subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ink-500);
+  margin-left: 8px;
+}
+
+/* フッター */
+.page-footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 1920px;
+  height: 56px;
+  background: var(--green-900);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  padding: 0 72px;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+}
+.page-footer .brand {
+  font-weight: 700;
+}
+.page-footer .spacer {
+  flex: 1;
+}
+.page-footer .page-num {
+  font-weight: 700;
+  font-family: var(--font-num);
+}
+
+/* 大見出し（章タイトル） */
+.section-eyebrow {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--green-700);
+  letter-spacing: 0.15em;
+}
+.section-heading {
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--ink-900);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+/* カード */
+.card {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(15, 76, 58, 0.06);
+}
+
+/* 赤枠強調（原資料の赤枠に対応） */
+.emphasis-box {
+  border: 3px solid var(--accent-red);
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(217, 74, 61, 0.12);
+}
+.emphasis-tag {
+  display: inline-block;
+  background: var(--accent-red);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+/* 数値スタイル */
+.big-num {
+  font-family: var(--font-num);
+  font-weight: 800;
+  color: var(--green-700);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.big-num .unit {
+  font-size: 0.45em;
+  font-weight: 700;
+  color: var(--ink-700);
+  margin-left: 4px;
+}
+/* 使用端末の解像度は1920*1080で設定されているため、
+   表示倍率が100%の場合は、1のままで良いが、
+   倍率が125%のような場合は、0.8とかに下げる必要がある */
+.slide-container {
+  zoom: 1;
+}
+
+/* 1ページめの端末部分 */
+.terminal {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding-top: 50px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f4c3a;
+  text-align: center;
+}

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>表紙</title>
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+
+<body>
+  <div class="slide-container" data-screen-label="01 表紙" style="background:#ffffff;">
+
+    <!-- 背景装飾: 左下の緑ブロック -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:720px; width:1200px; height:360px;
+              background:linear-gradient(135deg, #0f4c3a 0%, #1a7a5c 100%);
+              z-index:1;"></div>
+
+    <!-- 背景装飾: 右上の薄緑円 -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:1400px; top:-200px; width:720px; height:720px;
+              border-radius:50%; background:#e6f5ee; z-index:1;"></div>
+
+    <!-- 背景装飾: 右下の中緑円 -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:1520px; top:640px; width:440px; height:440px;
+              border-radius:50%; background:#7dd3b3; opacity:0.45; z-index:1;"></div>
+
+    <!-- 主題バッジ -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:140px; top:200px; width:900px; z-index:10;">
+      <div style="display:inline-block; padding:12px 28px;
+                background:#0f4c3a; color:#ffffff;
+                font-family:'Noto Sans JP',sans-serif;
+                font-size:22px; font-weight:700; letter-spacing:0.15em; border-radius:4px;">
+        安全衛生 / 労働衛生管理ガイドライン
+      </div>
+    </div>
+
+    <!-- メインタイトル -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:140px; top:280px; width:1100px; z-index:10;">
+      <div style="font-family:'Noto Sans JP',sans-serif;
+                font-size:80px; font-weight:800; color:#12211c;
+                line-height:1.2; letter-spacing:0.01em;">
+        情報機器作業に<br>おける労働衛生管理
+      </div>
+    </div>
+
+    <!-- サブタイトル -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:140px; top:590px; width:1100px; z-index:10;">
+      <div style="font-family:'Noto Sans JP',sans-serif;
+                font-size:34px; font-weight:500; color:#1a7a5c;
+                line-height:1.4; letter-spacing:0.03em;">
+        〜 講義用スライド：ガイドライン要点整理 〜
+      </div>
+    </div>
+
+    <!-- リード文 -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:140px; top:640px; width:1100px; z-index:10;">
+      <div style="margin-left: 15px; font-family:'Noto Sans JP',sans-serif;
+                font-size:22px; font-weight:400; color:#2c3e37;
+                line-height:1.7;">
+        パソコン・タブレット・スマートフォンを用いた事務作業に従事する<br>
+        すべての作業者と管理者のために。
+      </div>
+    </div>
+
+    <!-- 右側の3アイコン群（PC / タブレット / スマホ） -->
+    <div class="terminal" data-object="true" data-object-type="shape" style="position:absolute; left:1280px; top:280px; width:520px; height:340px;
+              background:#ffffff; border:1px solid #dfe6e2; border-radius:20px;
+              box-shadow:0 12px 40px rgba(15,76,58,0.10); z-index:5;">
+      <!-- PCアイコン -->
+      <div class="terminal-pc">
+        <svg viewBox="0 0 120 120" width="120" height="120">
+          <rect x="10" y="20" width="100" height="65" rx="6" fill="none" stroke="#1a7a5c" stroke-width="4" />
+          <rect x="18" y="28" width="84" height="49" fill="#e6f5ee" />
+          <rect x="45" y="90" width="30" height="6" fill="#1a7a5c" />
+          <rect x="30" y="94" width="60" height="6" rx="2" fill="#1a7a5c" />
+        </svg>
+        <p>パソコン</p>
+      </div>
+      <!-- タブレットアイコン -->
+      <div class="terminal-tablet">
+        <svg viewBox="0 0 120 120" width="120" height="120">
+          <rect x="25" y="15" width="70" height="95" rx="8" fill="none" stroke="#1a7a5c" stroke-width="4" />
+          <rect x="31" y="22" width="58" height="75" fill="#e6f5ee" />
+          <circle cx="60" cy="103" r="3.5" fill="#1a7a5c" />
+        </svg>
+        <p>タブレット</p>
+      </div>
+      <div class="terminal-smartphone">
+        <svg viewBox="0 0 120 120" width="120" height="120">
+          <rect x="35" y="12" width="50" height="98" rx="8" fill="none" stroke="#1a7a5c" stroke-width="4" />
+          <rect x="40" y="20" width="40" height="78" fill="#e6f5ee" />
+          <circle cx="60" cy="104" r="3" fill="#1a7a5c" />
+        </svg>
+        <p>スマートフォン</p>
+      </div>
+    </div>
+  </div>
+  <!-- 対象キャプション -->
+  <div data-object="true" data-object-type="textbox"
+    style="position:absolute; left:1300px; top:530px; width:480px; text-align:center; z-index:10;">
+    <div style="font-size:20px; font-weight:500; color:#2c3e37; line-height:1.5;">
+      これらを使用した<br>
+      <span style="font-weight:800; color:#0f4c3a;">すべての事務作業</span>が対象
+    </div>
+  </div>
+
+  <!-- 左下フッター（緑ブロック内） -->
+  <div data-object="true" data-object-type="textbox"
+    style="position:absolute; left:140px; top:780px; width:900px; z-index:10;">
+    <div style="font-family:'Noto Sans JP',sans-serif;
+                font-size:24px; font-weight:500; color:#ffffff;
+                line-height:1.5;">
+      本資料は厚生労働省「情報機器作業における労働衛生管理のためのガイドライン」<br>
+      をもとに、講義用に要点を再構成したものです。
+    </div>
+  </div>
+
+  <!-- 出典 -->
+  <div data-object="true" data-object-type="textbox"
+    style="position:absolute; left:140px; top:960px; width:900px; z-index:10;">
+    <div style="font-family:'Noto Sans JP',sans-serif;
+                font-size:18px; font-weight:400; color:#7dd3b3;
+                letter-spacing:0.05em;">
+      出典：厚生労働省｜情報機器作業における労働衛生管理のためのガイドライン
+    </div>
+  </div>
+
+  </div>
+</body>
+
+</html>

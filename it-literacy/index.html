@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITリテラシー</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: #111;
+      font-family:
+        "Noto Sans JP",
+        "Yu Gothic",
+        "Meiryo",
+        sans-serif;
+    }
+
+    /* スライドを表示する領域 */
+    #presentation {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #111;
+    }
+
+    /* 1920×1080のスライドを縮小表示する枠 */
+    #slide-wrapper {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 1920px;
+      height: 1080px;
+      transform-origin: center center;
+      background: #fff;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+    }
+
+    #slide-frame {
+      display: block;
+      width: 1920px;
+      height: 1080px;
+      border: 0;
+      background: #fff;
+    }
+
+    /* ページ番号 */
+    #page-indicator {
+      position: fixed;
+      right: 24px;
+      bottom: 18px;
+      z-index: 100;
+      padding: 8px 14px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.65);
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 700;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    body:hover #page-indicator,
+    #page-indicator.visible {
+      opacity: 1;
+    }
+
+    /* 左右クリック領域 */
+    .navigation-area {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      z-index: 50;
+      width: 12vw;
+      min-width: 80px;
+      cursor: pointer;
+    }
+
+    #previous-area {
+      left: 0;
+    }
+
+    #next-area {
+      right: 0;
+    }
+
+    /* マウスを近づけたときの矢印 */
+    .navigation-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 64px;
+      opacity: 0;
+      transition: opacity 0.2s;
+      user-select: none;
+    }
+
+    #previous-area .navigation-arrow {
+      left: 22px;
+    }
+
+    #next-area .navigation-arrow {
+      right: 22px;
+    }
+
+    .navigation-area:hover .navigation-arrow {
+      opacity: 1;
+    }
+
+    /* 操作説明 */
+    #help {
+      position: fixed;
+      left: 50%;
+      bottom: 20px;
+      z-index: 100;
+      transform: translateX(-50%);
+      padding: 10px 18px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.72);
+      border-radius: 7px;
+      font-size: 14px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+
+    #help.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <main id="presentation">
+    <div id="slide-wrapper">
+      <iframe id="slide-frame" title="講義スライド" src="slides/01-cover.html">
+      </iframe>
+    </div>
+  </main>
+
+  <div id="previous-area" class="navigation-area" aria-label="前のスライド">
+    <div class="navigation-arrow">‹</div>
+  </div>
+
+  <div id="next-area" class="navigation-area" aria-label="次のスライド">
+    <div class="navigation-arrow">›</div>
+  </div>
+
+  <div id="page-indicator">1 / 13</div>
+
+  <div id="help">
+    ← →：移動　
+    Space：次へ　
+    Home / End：先頭・最後　
+    F：全画面　
+    H：操作説明
+  </div>
+
+  <script>
+    "use strict";
+
+    const slides = [
+      "slides/01-cover.html",
+      "slides/02-what-is-it-literacy.html",
+      "slides/03-basic-skills.html",
+      "slides/04-cpu-vs-soc.html",
+      "slides/05-pc-smartphone-trend.html",
+      "slides/06-os-overview.html",
+      "slides/07-applications.html",
+      "slides/08-ai-tools-types.html",
+      "slides/09-npu-hardware.html",
+      "slides/10-information-search.html",
+      "slides/11-security.html",
+      "slides/12-communication-data.html",
+      "slides/13-problem-solving.html"
+    ];
+
+    let currentIndex = 0;
+
+    const slideFrame =
+      document.getElementById("slide-frame");
+
+    const slideWrapper =
+      document.getElementById("slide-wrapper");
+
+    const pageIndicator =
+      document.getElementById("page-indicator");
+
+    const help =
+      document.getElementById("help");
+
+    function showSlide(index) {
+      if (index < 0 || index >= slides.length) {
+        return;
+      }
+
+      currentIndex = index;
+      slideFrame.src = slides[currentIndex];
+
+      pageIndicator.textContent =
+        `${currentIndex + 1} / ${slides.length}`;
+
+      history.replaceState(
+        null,
+        "",
+        `#${currentIndex + 1}`
+      );
+
+      showPageIndicator();
+    }
+
+    function nextSlide() {
+      if (currentIndex < slides.length - 1) {
+        showSlide(currentIndex + 1);
+      }
+    }
+
+    function previousSlide() {
+      if (currentIndex > 0) {
+        showSlide(currentIndex - 1);
+      }
+    }
+
+    function firstSlide() {
+      showSlide(0);
+    }
+
+    function lastSlide() {
+      showSlide(slides.length - 1);
+    }
+
+    function resizeSlide() {
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+
+      const scaleX = screenWidth / 1920;
+      const scaleY = screenHeight / 1080;
+
+      /*
+       * 縦横比を維持して画面内に収める
+       */
+      const scale = Math.min(scaleX, scaleY);
+
+      slideWrapper.style.transform =
+        `translate(-50%, -50%) scale(${scale})`;
+    }
+
+    async function toggleFullscreen() {
+      try {
+        if (!document.fullscreenElement) {
+          await document.documentElement.requestFullscreen();
+        } else {
+          await document.exitFullscreen();
+        }
+      } catch (error) {
+        console.error(
+          "全画面表示に切り替えられませんでした。",
+          error
+        );
+      }
+    }
+
+    let indicatorTimer;
+
+    function showPageIndicator() {
+      pageIndicator.classList.add("visible");
+
+      clearTimeout(indicatorTimer);
+
+      indicatorTimer = setTimeout(() => {
+        pageIndicator.classList.remove("visible");
+      }, 1500);
+    }
+
+    function toggleHelp() {
+      help.classList.toggle("visible");
+    }
+
+    document.addEventListener("keydown", event => {
+      switch (event.key) {
+        case "ArrowRight":
+        case "PageDown":
+        case "Enter":
+        case " ":
+          event.preventDefault();
+          nextSlide();
+          break;
+
+        case "ArrowLeft":
+        case "PageUp":
+        case "Backspace":
+          event.preventDefault();
+          previousSlide();
+          break;
+
+        case "Home":
+          event.preventDefault();
+          firstSlide();
+          break;
+
+        case "End":
+          event.preventDefault();
+          lastSlide();
+          break;
+
+        case "f":
+        case "F":
+          event.preventDefault();
+          toggleFullscreen();
+          break;
+
+        case "h":
+        case "H":
+        case "?":
+          event.preventDefault();
+          toggleHelp();
+          break;
+      }
+    });
+
+    document
+      .getElementById("previous-area")
+      .addEventListener("click", previousSlide);
+
+    document
+      .getElementById("next-area")
+      .addEventListener("click", nextSlide);
+
+    window.addEventListener("resize", resizeSlide);
+
+    /*
+     * URL末尾の #5 などから開始ページを復元
+     */
+    const initialPage =
+      Number.parseInt(location.hash.slice(1), 10);
+
+    if (
+      Number.isInteger(initialPage) &&
+      initialPage >= 1 &&
+      initialPage <= slides.length
+    ) {
+      currentIndex = initialPage - 1;
+    }
+
+    resizeSlide();
+    showSlide(currentIndex);
+
+    /*
+     * 最初だけ操作説明を数秒表示
+     */
+    help.classList.add("visible");
+
+    setTimeout(() => {
+      help.classList.remove("visible");
+    }, 4000);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>エルゴノミクス</title>
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+
+<body>
+  <div class="slide-container" data-screen-label="08 エルゴノミクス">
+
+    <!-- ヘッダー -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:88px;
+              background:#ffffff; border-bottom:1px solid #dfe6e2; z-index:1;"></div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:72px; top:26px; width:400px; z-index:10;">
+      <span style="display:inline-block; padding:8px 18px; background:#1a7a5c; color:#fff;
+                 font-size:20px; font-weight:700; border-radius:4px; letter-spacing:0.02em;">SECTION 04</span>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:500px; top:28px; width:1200px; z-index:10;">
+      <div style="font-size:32px; font-weight:700; color:#12211c;">
+        エルゴノミクス ｜ 正しい姿勢と機器配置
+      </div>
+    </div>
+
+    <!-- 章タイトル -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:120px; top:130px; width:1680px; z-index:10;">
+      <div style="font-size:26px; font-weight:700; color:#1a7a5c; letter-spacing:0.1em;">ERGONOMICS</div>
+      <div style="font-size:46px; font-weight:800; color:#12211c; line-height:1.2; margin-top:10px;">
+        肩こり・腰痛を防ぐ「正しい姿勢」の作り方
+      </div>
+    </div>
+
+    <!-- 左側：人物姿勢イラスト（大きめ） -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:290px; width:780px; height:640px;
+              background:#f4faf7; border:1px solid #dfe6e2; border-radius:14px; z-index:1;"></div>
+
+    <!-- 姿勢SVG -->
+    <div data-object="true" data-object-type="icon"
+      style="position:absolute; left:150px; top:320px; width:720px; height:580px; z-index:10;">
+      <svg viewBox="0 0 720 580" width="720" height="580">
+        <!-- 床 -->
+        <line x1="30" y1="530" x2="700" y2="530" stroke="#9aaaa3" stroke-width="3" />
+
+        <!-- 机 -->
+        <rect x="200" y="330" width="380" height="8" fill="#0f4c3a" />
+        <line x1="220" y1="338" x2="220" y2="500" stroke="#0f4c3a" stroke-width="4" />
+        <line x1="560" y1="338" x2="560" y2="500" stroke="#0f4c3a" stroke-width="4" />
+
+        <!-- ディスプレイ -->
+        <rect x="380" y="200" width="180" height="120" rx="6" fill="none" stroke="#1a7a5c" stroke-width="4" />
+        <rect x="386" y="206" width="168" height="100" fill="#e6f5ee" />
+        <rect x="450" y="320" width="40" height="10" fill="#1a7a5c" />
+        <rect x="430" y="330" width="80" height="6" rx="2" fill="#1a7a5c" />
+
+        <!-- キーボード -->
+        <rect x="240" y="320" width="130" height="10" rx="2" fill="#1a7a5c" />
+
+        <!-- 椅子 -->
+        <rect x="110" y="360" width="80" height="16" fill="#1a7a5c" />
+        <rect x="90" y="270" width="30" height="100" rx="6" fill="#e6f5ee" stroke="#1a7a5c" stroke-width="3" />
+        <line x1="130" y1="376" x2="120" y2="500" stroke="#1a7a5c" stroke-width="4" stroke-linecap="round" />
+        <line x1="170" y1="376" x2="180" y2="500" stroke="#1a7a5c" stroke-width="4" stroke-linecap="round" />
+
+        <!-- 人物 -->
+        <!-- 頭 -->
+        <circle cx="155" cy="235" r="28" fill="#fbe4c9" stroke="#12211c" stroke-width="2" />
+        <!-- 胴 -->
+        <path d="M155 263 L155 360" stroke="#12211c" stroke-width="6" stroke-linecap="round" />
+        <!-- 腕 -->
+        <path d="M155 290 L220 290 L280 320" stroke="#12211c" stroke-width="6" stroke-linecap="round" fill="none" />
+        <!-- 太もも -->
+        <path d="M155 360 L220 360" stroke="#12211c" stroke-width="6" stroke-linecap="round" />
+        <!-- スネ -->
+        <path d="M220 360 L220 500" stroke="#12211c" stroke-width="6" stroke-linecap="round" />
+        <!-- 足 -->
+        <path d="M220 500 L245 500" stroke="#12211c" stroke-width="6" stroke-linecap="round" />
+
+        <!-- 目の高さライン -->
+        <line x1="30" y1="235" x2="380" y2="235" stroke="#d94a3d" stroke-width="2" stroke-dasharray="6,4" />
+        <text x="40" y="228" fill="#d94a3d" font-size="18" font-weight="700" font-family="Inter,sans-serif">EYE
+          LEVEL</text>
+
+        <!-- 画面上端ライン -->
+        <line x1="380" y1="200" x2="700" y2="200" stroke="#d94a3d" stroke-width="2" stroke-dasharray="6,4" />
+        <text x="590" y="193" fill="#d94a3d" font-size="18" font-weight="700" font-family="Inter,sans-serif">画面上端</text>
+
+        <!-- 目の高さ／画面上端 の関係 -->
+        <text x="230" y="185" fill="#12211c" font-size="17" font-weight="700" font-family="Noto Sans JP,sans-serif">画面上端
+          ≤ 目の高さ</text>
+
+        <!-- 視距離矢印 -->
+        <g stroke="#d94a3d" stroke-width="2.5" fill="none" stroke-linecap="round">
+          <line x1="185" y1="255" x2="378" y2="255" />
+          <path d="M189 251 L185 255 L189 259" />
+          <path d="M374 251 L378 255 L374 259" />
+        </g>
+        <text x="215" y="248" fill="#d94a3d" font-size="18" font-weight="700"
+          font-family="Inter,sans-serif">40〜70cm</text>
+
+        <!-- 肘角度円弧 -->
+        <path d="M170 297 A 20 20 0 0 0 158 315" stroke="#d94a3d" stroke-width="3" fill="none" />
+        <text x="175" y="330" fill="#d94a3d" font-size="18" font-weight="700" font-family="Inter,sans-serif">≈
+          90°</text>
+
+        <!-- 足裏平行 -->
+        <text x="230" y="522" fill="#1a7a5c" font-size="16" font-weight="700"
+          font-family="Noto Sans JP,sans-serif">足裏は床にしっかり</text>
+      </svg>
+    </div>
+
+    <!-- 右側：3ルール -->
+    <!-- ルール1: 目の高さ -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:930px; top:290px; width:870px; height:195px;
+              background:#ffffff; border:3px solid #d94a3d; border-radius:12px;
+              box-shadow:0 6px 20px rgba(217,74,61,0.10); z-index:1;"></div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:960px; top:310px; width:200px; z-index:10;">
+      <span style="display:inline-block; background:#d94a3d; color:#fff;
+                 font-size:15px; font-weight:700; padding:5px 12px; border-radius:4px; letter-spacing:0.05em;">
+        RULE 01
+      </span>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:960px; top:348px; width:820px; z-index:10;">
+      <div style="font-size:28px; font-weight:800; color:#12211c; line-height:1.3;">
+        目の高さと画面上端
+      </div>
+      <div style="font-size:20px; font-weight:500; color:#2c3e37; line-height:1.5; margin-top:8px;">
+        画面の上端を <strong style="color:#d94a3d;">目の高さか、やや下</strong> に。<br>
+        首・肩こりを防止します。
+      </div>
+    </div>
+
+    <!-- ルール2: 視距離 -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:930px; top:505px; width:870px; height:195px;
+              background:#ffffff; border:3px solid #d94a3d; border-radius:12px;
+              box-shadow:0 6px 20px rgba(217,74,61,0.10); z-index:1;"></div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:960px; top:525px; width:200px; z-index:10;">
+      <span style="display:inline-block; background:#d94a3d; color:#fff;
+                 font-size:15px; font-weight:700; padding:5px 12px; border-radius:4px; letter-spacing:0.05em;">
+        RULE 02
+      </span>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:960px; top:563px; width:530px; z-index:10;">
+      <div style="font-size:28px; font-weight:800; color:#12211c; line-height:1.3;">
+        画面までの視距離
+      </div>
+      <div style="font-size:20px; font-weight:500; color:#2c3e37; line-height:1.5; margin-top:8px;">
+        おおむね <strong style="color:#d94a3d;">おおよそ 1 腕分</strong> の距離を保つ。
+      </div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:1520px; top:530px; width:260px; text-align:center; z-index:10;">
+      <div style="font-family:'Inter',sans-serif; font-size:56px; font-weight:800; color:#d94a3d;
+                letter-spacing:-0.02em; line-height:1;">
+        40〜70<span style="font-size:32px; color:#12211c;"> cm</span>
+      </div>
+      <div style="font-size:16px; font-weight:600; color:#a83a30; margin-top:10px;">
+        画面から離す
+      </div>
+    </div>
+
+    <!-- ルール3: 肘の角度 -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:930px; top:720px; width:870px; height:210px;
+              background:#ffffff; border:3px solid #d94a3d; border-radius:12px;
+              box-shadow:0 6px 20px rgba(217,74,61,0.10); z-index:1;"></div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:960px; top:740px; width:200px; z-index:10;">
+      <span style="display:inline-block; background:#d94a3d; color:#fff;
+                 font-size:15px; font-weight:700; padding:5px 12px; border-radius:4px; letter-spacing:0.05em;">
+        RULE 03
+      </span>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:960px; top:778px; width:530px; z-index:10;">
+      <div style="font-size:28px; font-weight:800; color:#12211c; line-height:1.3;">
+        キーボード入力時の肘
+      </div>
+      <div style="font-size:20px; font-weight:500; color:#2c3e37; line-height:1.5; margin-top:8px;">
+        椅子・机の高さを調整し、<strong style="color:#d94a3d;">肘の角度は約90°前後</strong> に。
+      </div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:1520px; top:745px; width:260px; text-align:center; z-index:10;">
+      <div style="font-family:'Inter',sans-serif; font-size:72px; font-weight:800; color:#d94a3d;
+                letter-spacing:-0.02em; line-height:1;">
+        90<span style="font-size:36px; color:#12211c;">°</span>
+      </div>
+      <div style="font-size:16px; font-weight:600; color:#a83a30; margin-top:10px;">
+        前腕はほぼ水平
+      </div>
+    </div>
+
+    <!-- ノートPCの注意 -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:948px; width:1680px; height:68px;
+              background:#fdf1d6; border-left:8px solid #f2a71b; border-radius:8px; z-index:1;"></div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:150px; top:965px; width:1620px; z-index:10;">
+      <div style="font-size:20px; font-weight:600; color:#12211c;">
+        💡 <strong>ノートPC・タブレットで長時間作業する場合は、</strong>
+        <span style="color:#c98a0a; font-weight:800;">スタンド＋外付けキーボード・マウス</span>
+        の組み合わせを強く推奨。
+      </div>
+    </div>
+
+    <!-- フッター -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:1024px; width:1920px; height:56px;
+              background:#0f4c3a; z-index:1;"></div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:72px; top:1040px; width:1000px; z-index:10;">
+      <span style="color:#fff; font-size:18px; font-weight:700;">情報機器作業における労働衛生管理ガイドライン</span>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:1780px; top:1040px; width:80px; text-align:right; z-index:10;">
+      <span style="color:#fff; font-size:18px; font-weight:700;">09</span>
+    </div>
+
+  </div>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496"
+    integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ=="
+    data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

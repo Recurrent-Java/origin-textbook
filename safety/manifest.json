@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0",
+  "format": "html",
+  "metadata": {
+    "title": "情報機器作業における労働衛生管理ガイドライン",
+    "description": "講義・配布兼用の解説スライド（11枚構成）",
+    "author": ""
+  },
+  "canvas": {"width": 1920, "height": 1080},
+  "playlist": [
+    "01-cover.html",
+    "02-introduction.html",
+    "03-three-pillars.html",
+    "04-work-classification.html",
+    "05-environment-lighting.html",
+    "06-environment-furniture.html",
+    "07-environment-temperature.html",
+    "08-ergonomics.html",
+    "09-work-management.html",
+    "10-health-education.html",
+    "11-special-care.html"
+  ]
+}
