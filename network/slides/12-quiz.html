@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>ミニクイズ</title>
+  <link rel="stylesheet" href="../assets/theme.css">
+  <style>
+    .quiz-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quiz-answer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, #fbfaf7 0%, #fff 100%);
+      border-top: 3px solid #10b981;
+      padding: 22px 28px 24px;
+      transform: translateY(100%);
+      transition: transform .35s ease;
+    }
+
+    .quiz-card:hover .quiz-answer,
+    .quiz-card:focus-within .quiz-answer {
+      transform: translateY(0);
+    }
+
+    .quiz-hint {
+      position: absolute;
+      right: 20px;
+      bottom: 16px;
+      color: #94a3b8;
+      font-size: 14px;
+      font-weight: 500;
+      transition: opacity .2s;
+    }
+
+    .quiz-card:hover .quiz-hint,
+    .quiz-card:focus-within .quiz-hint {
+      opacity: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slide-container" data-screen-label="12 章末ミニクイズ">
+
+    <!-- ヘッダー -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:0;top:0;width:1920px;height:120px;background:#fbfaf7;z-index:1;border-bottom:1px solid #e5e7eb;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:80px;top:44px;width:600px;height:36px;z-index:10;">
+      <div style="color:#0b2545;font-size:20px;font-weight:700;letter-spacing:.3em;">REVIEW ／ 章末ミニクイズ</div>
+    </div>
+
+    <!-- タイトル -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:80px;top:160px;width:1760px;height:90px;z-index:10;">
+      <h1 style="margin:0;font-size:64px;font-weight:900;color:#0b2545;line-height:1.15;white-space:nowrap;">理解度チェック —
+        <span style="color:#f97316;">4問クイズ</span></h1>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:80px;top:260px;width:1760px;height:40px;z-index:10;">
+      <div style="font-size:24px;color:#6b7280;font-weight:500;">👉 カードにマウスを合わせる（またはタップ）で解答が出ます。まずは自分で考えてみましょう。</div>
+    </div>
+
+    <!-- Q1 -->
+    <div data-object="true" data-object-type="shape" class="quiz-card" tabindex="0"
+      style="position:absolute;left:80px;top:340px;width:880px;height:320px;background:#fff;border:1px solid #e5e7eb;border-top:6px solid #2b7fff;border-radius:10px;z-index:5;box-shadow:0 4px 14px rgba(11,37,69,.06);">
+      <div style="padding:24px 28px 20px;">
+        <div style="color:#2b7fff;font-size:16px;font-weight:900;letter-spacing:.2em;">QUESTION 01</div>
+        <div style="font-size:26px;font-weight:900;color:#0b2545;margin-top:6px;line-height:1.4;">
+          社内でPCとプリンタをつなぐネットワークは、次のうちどれ？</div>
+        <div style="font-size:19px;color:#374151;line-height:2;margin-top:12px;">
+          Ⓐ　WAN　　Ⓑ　LAN　　Ⓒ　DNS　　Ⓓ　MAC
+        </div>
+      </div>
+      <div class="quiz-hint">💡 ホバー / タップで解答</div>
+      <div class="quiz-answer">
+        <div style="font-size:15px;color:#10b981;font-weight:900;letter-spacing:.15em;">ANSWER</div>
+        <div style="font-size:22px;font-weight:900;color:#0b2545;margin-top:4px;">Ⓑ LAN（Local Area Network）</div>
+        <div style="font-size:14px;color:#6b7280;margin-top:4px;line-height:1.5;">
+          オフィスや家庭など限られた範囲のネットワーク。広域を指すWANとは範囲が違います。</div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div data-object="true" data-object-type="shape" class="quiz-card" tabindex="0"
+      style="position:absolute;left:980px;top:340px;width:860px;height:320px;background:#fff;border:1px solid #e5e7eb;border-top:6px solid #10b981;border-radius:10px;z-index:5;box-shadow:0 4px 14px rgba(11,37,69,.06);">
+      <div style="padding:24px 28px 20px;">
+        <div style="color:#10b981;font-size:16px;font-weight:900;letter-spacing:.2em;">QUESTION 02</div>
+        <div style="font-size:26px;font-weight:900;color:#0b2545;margin-top:6px;line-height:1.4;">
+          「機器に焼き込まれている」変わらない住所はどっち？</div>
+        <div style="font-size:19px;color:#374151;line-height:2;margin-top:12px;">
+          Ⓐ　IPアドレス<br>Ⓑ　MACアドレス
+        </div>
+      </div>
+      <div class="quiz-hint">💡 ホバー / タップで解答</div>
+      <div class="quiz-answer">
+        <div style="font-size:15px;color:#10b981;font-weight:900;letter-spacing:.15em;">ANSWER</div>
+        <div style="font-size:22px;font-weight:900;color:#0b2545;margin-top:4px;">Ⓑ MACアドレス</div>
+        <div style="font-size:14px;color:#6b7280;margin-top:4px;line-height:1.5;">
+          MACはNICに固有の物理アドレス。IPはネットワークごとに変わる論理アドレスです。</div>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div data-object="true" data-object-type="shape" class="quiz-card" tabindex="0"
+      style="position:absolute;left:80px;top:680px;width:880px;height:300px;background:#fff;border:1px solid #e5e7eb;border-top:6px solid #f97316;border-radius:10px;z-index:5;box-shadow:0 4px 14px rgba(11,37,69,.06);">
+      <div style="padding:24px 28px 20px;">
+        <div style="color:#f97316;font-size:16px;font-weight:900;letter-spacing:.2em;">QUESTION 03</div>
+        <div style="font-size:26px;font-weight:900;color:#0b2545;margin-top:6px;line-height:1.4;">
+          Wi-Fi接続時にIPを自動で配ってくれる仕組みは？</div>
+        <div style="font-size:19px;color:#374151;line-height:2;margin-top:12px;">
+          Ⓐ　DNS　　Ⓑ　DHCP　　Ⓒ　WPA2　　Ⓓ　SSID
+        </div>
+      </div>
+      <div class="quiz-hint">💡 ホバー / タップで解答</div>
+      <div class="quiz-answer">
+        <div style="font-size:15px;color:#10b981;font-weight:900;letter-spacing:.15em;">ANSWER</div>
+        <div style="font-size:22px;font-weight:900;color:#0b2545;margin-top:4px;">Ⓑ DHCP</div>
+        <div style="font-size:14px;color:#6b7280;margin-top:4px;line-height:1.5;">Dynamic Host Configuration
+          Protocol。IP・DNS・ゲートウェイなどを自動で配布します。</div>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div data-object="true" data-object-type="shape" class="quiz-card" tabindex="0"
+      style="position:absolute;left:980px;top:680px;width:860px;height:300px;background:#fff;border:1px solid #e5e7eb;border-top:6px solid #ef4444;border-radius:10px;z-index:5;box-shadow:0 4px 14px rgba(11,37,69,.06);">
+      <div style="padding:24px 28px 20px;">
+        <div style="color:#ef4444;font-size:16px;font-weight:900;letter-spacing:.2em;">QUESTION 04</div>
+        <div style="font-size:26px;font-weight:900;color:#0b2545;margin-top:6px;line-height:1.4;">ネットが繋がらない時、まず打つコマンドは？
+        </div>
+        <div style="font-size:19px;color:#374151;line-height:2;margin-top:12px;">
+          Ⓐ　format　　Ⓑ　shutdown<br>Ⓒ　ipconfig / ping　　Ⓓ　cd
+        </div>
+      </div>
+      <div class="quiz-hint">💡 ホバー / タップで解答</div>
+      <div class="quiz-answer">
+        <div style="font-size:15px;color:#10b981;font-weight:900;letter-spacing:.15em;">ANSWER</div>
+        <div style="font-size:22px;font-weight:900;color:#0b2545;margin-top:4px;">Ⓒ ipconfig / ping</div>
+        <div style="font-size:14px;color:#6b7280;margin-top:4px;line-height:1.5;">
+          ipconfigで自分のIPが取れているか、pingで相手まで届くかを確認します。</div>
+      </div>
+    </div>
+
+    <!-- フッター -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:0;top:1010px;width:1920px;height:1px;background:#e5e7eb;z-index:5;"></div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:80px;top:1030px;width:1500px;height:32px;z-index:10;">
+      <div style="color:#6b7280;font-size:18px;">🎯 4問正解 → 次のステップへ！ ／ 3問以下 → もう一度該当章を読み返しましょう</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:1720px;top:1030px;width:160px;height:32px;z-index:10;">
+      <div style="text-align:right;color:#6b7280;font-size:18px;font-weight:500;">12 / 13</div>
+    </div>
+
+  </div>
+</body>
+
+</html>

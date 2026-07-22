@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>トラブル対応</title>
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+
+<body>
+  <div class="slide-container" data-screen-label="11 第4章 トラブル対応">
+
+    <!-- ヘッダー -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:0;top:0;width:1920px;height:120px;background:#fbfaf7;z-index:1;border-bottom:1px solid #e5e7eb;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:80px;top:44px;width:700px;height:36px;z-index:10;">
+      <div style="color:#ef4444;font-size:20px;font-weight:700;letter-spacing:.3em;">CHAPTER 04 ／ トラブル対応とセキュリティ</div>
+    </div>
+
+    <!-- タイトル -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:80px;top:160px;width:1760px;height:90px;z-index:10;">
+      <h1 style="margin:0;font-size:64px;font-weight:900;color:#0b2545;line-height:1.15;white-space:nowrap;">「つながらない！」を
+        <span style="color:#ef4444;">切り分ける</span></h1>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:80px;top:260px;width:1760px;height:40px;z-index:10;">
+      <div style="font-size:24px;color:#6b7280;font-weight:500;">パニックにならず、順番に確認していけば原因の8割は見つかります。</div>
+    </div>
+
+    <!-- 左：トラブル切り分けフロー -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:80px;top:340px;width:900px;height:640px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;z-index:1;box-shadow:0 4px 14px rgba(11,37,69,.05);">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:110px;top:360px;width:840px;height:44px;z-index:10;">
+      <div style="font-size:28px;font-weight:900;color:#0b2545;">🩺 トラブル切り分けフロー</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:110px;top:404px;width:840px;height:32px;z-index:10;">
+      <div style="font-size:18px;color:#6b7280;">「近い場所」から順番に確認するのがコツ</div>
+    </div>
+
+    <!-- Step 1 -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:110px;top:456px;width:840px;height:140px;background:#f9fafb;border-left:6px solid #2b7fff;border-radius:6px;z-index:2;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:140px;top:472px;width:56px;height:44px;z-index:10;">
+      <div class="mono" style="font-size:32px;font-weight:900;color:#2b7fff;">01</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:210px;top:474px;width:720px;height:38px;z-index:10;">
+      <div style="font-size:22px;font-weight:900;color:#0b2545;">ケーブル・Wi-Fi 接続の確認</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:210px;top:514px;width:720px;height:76px;z-index:10;">
+      <div style="font-size:16px;color:#374151;line-height:1.7;">
+        LANケーブルは差さっているか？ Wi-FiのSSIDは合っているか？<br>
+        → 意外と多いのが「機内モードON」「ケーブル抜け」
+      </div>
+    </div>
+
+    <!-- 矢印 -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:521px;top:602px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:14px solid #cbd5e1;z-index:5;">
+    </div>
+
+    <!-- Step 2 -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:110px;top:626px;width:840px;height:140px;background:#f9fafb;border-left:6px solid #10b981;border-radius:6px;z-index:2;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:140px;top:642px;width:56px;height:44px;z-index:10;">
+      <div class="mono" style="font-size:32px;font-weight:900;color:#10b981;">02</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:210px;top:644px;width:720px;height:38px;z-index:10;">
+      <div style="font-size:22px;font-weight:900;color:#0b2545;">IPアドレスの取得状態を確認</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:210px;top:684px;width:720px;height:76px;z-index:10;">
+      <div style="font-size:16px;color:#374151;line-height:1.7;">
+        <span class="mono" style="background:#f3f4f6;padding:2px 8px;border-radius:4px;">ipconfig</span>
+        でIPが取れているか確認<br>
+        → <b>169.254.x.x</b> ならDHCP失敗、<b>0.0.0.0</b> なら物理層NG
+      </div>
+    </div>
+
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:521px;top:772px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:14px solid #cbd5e1;z-index:5;">
+    </div>
+
+    <!-- Step 3 -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:110px;top:796px;width:840px;height:140px;background:#f9fafb;border-left:6px solid #f97316;border-radius:6px;z-index:2;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:140px;top:812px;width:56px;height:44px;z-index:10;">
+      <div class="mono" style="font-size:32px;font-weight:900;color:#f97316;">03</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:210px;top:814px;width:720px;height:38px;z-index:10;">
+      <div style="font-size:22px;font-weight:900;color:#0b2545;">機器の再起動</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:210px;top:854px;width:720px;height:76px;z-index:10;">
+      <div style="font-size:16px;color:#374151;line-height:1.7;">
+        PC → ルーター → ONU の順で電源OFF/ON<br>
+        → 「再起動で直る」は万能薬。ただし業務時間帯は要注意
+      </div>
+    </div>
+
+    <!-- 右：コマンド実演 -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:1020px;top:340px;width:820px;height:640px;background:#0b2545;border-radius:10px;z-index:1;box-shadow:0 4px 14px rgba(11,37,69,.15);">
+    </div>
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:1020px;top:340px;width:820px;height:56px;background:#13315c;border-radius:10px 10px 0 0;z-index:2;">
+    </div>
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:1044px;top:362px;width:12px;height:12px;background:#ef4444;border-radius:50%;z-index:5;">
+    </div>
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:1064px;top:362px;width:12px;height:12px;background:#f59e0b;border-radius:50%;z-index:5;">
+    </div>
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:1084px;top:362px;width:12px;height:12px;background:#10b981;border-radius:50%;z-index:5;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:1120px;top:358px;width:400px;height:24px;z-index:10;">
+      <div style="color:#94a3b8;font-size:14px;font-family:'JetBrains Mono',monospace;">Command Prompt — ping / ipconfig
+        実演</div>
+    </div>
+
+    <!-- ipconfig の例 -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:1050px;top:420px;width:760px;height:240px;z-index:10;">
+      <div class="mono" style="color:#e6f0ff;font-size:16px;line-height:1.65;">
+        <span style="color:#94a3b8;"># 自分のIPアドレスや設定を確認</span><br>
+        <span style="color:#10b981;">C:\Users\you></span> <span style="color:#fbbf24;">ipconfig</span><br><br>
+        Wireless LAN adapter Wi-Fi:<br>
+        &nbsp;&nbsp;IPv4 Address . . . . . : <b>192.168.1.24</b><br>
+        &nbsp;&nbsp;Subnet Mask . . . . . : 255.255.255.0<br>
+        &nbsp;&nbsp;Default Gateway . . . : <b style="color:#fb923c;">192.168.1.1</b>　← ルーター<br>
+        &nbsp;&nbsp;Physical Address . . . : A4-5E-60-F1-12-3B　← MAC
+      </div>
+    </div>
+
+    <!-- 区切り -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:1050px;top:680px;width:760px;height:1px;background:rgba(255,255,255,.1);z-index:5;">
+    </div>
+
+    <!-- ping の例 -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:1050px;top:702px;width:760px;height:260px;z-index:10;">
+      <div class="mono" style="color:#e6f0ff;font-size:16px;line-height:1.65;">
+        <span style="color:#94a3b8;"># ネットワーク先まで届くか試す</span><br>
+        <span style="color:#10b981;">C:\Users\you></span> <span style="color:#fbbf24;">ping google.com</span><br><br>
+        Reply from 142.250.196.174: bytes=32 <b style="color:#4ade80;">time=8ms</b> TTL=118<br>
+        Reply from 142.250.196.174: bytes=32 <b style="color:#4ade80;">time=7ms</b> TTL=118<br><br>
+        <span style="color:#94a3b8;"># 失敗すると…</span><br>
+        <span style="color:#f87171;">Request timed out.</span>　← 相手まで届いていない
+      </div>
+    </div>
+
+    <!-- 下部：セキュリティ3点セット -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:0;top:1010px;width:1920px;height:1px;background:#e5e7eb;z-index:5;"></div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:80px;top:1030px;width:1560px;height:32px;z-index:10;">
+      <div style="color:#6b7280;font-size:18px;">🛡️ さらに守るなら：<b style="color:#0b2545;">SSID非公開（ステルス）</b>／<b
+          style="color:#0b2545;">WPA2暗号化</b>／<b style="color:#0b2545;">MACアドレスフィルタリング</b></div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:1720px;top:1030px;width:160px;height:32px;z-index:10;">
+      <div style="text-align:right;color:#6b7280;font-size:18px;font-weight:500;">11 / 13</div>
+    </div>
+
+  </div>
+</body>
+
+</html>

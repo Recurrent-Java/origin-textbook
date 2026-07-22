@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>IP/MACアドレス</title>
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+
+<body>
+  <div class="slide-container" data-screen-label="05 IP・MACアドレス">
+
+    <!-- ヘッダー -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:0;top:0;width:1920px;height:120px;background:#fbfaf7;z-index:1;border-bottom:1px solid #e5e7eb;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:80px;top:44px;width:600px;height:36px;z-index:10;">
+      <div style="color:#2b7fff;font-size:20px;font-weight:700;letter-spacing:.3em;">CHAPTER 01 ／ ネットワークとは</div>
+    </div>
+
+    <!-- タイトル -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:80px;top:160px;width:1760px;height:90px;z-index:10;">
+      <h1 style="margin:0;font-size:60px;font-weight:900;color:#0b2545;line-height:1.15;white-space:nowrap;">2つの「住所」—
+        <span style="color:#f97316;">IPアドレス</span> と <span style="color:#f97316;">MACアドレス</span>
+      </h1>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:80px;top:260px;width:1760px;height:40px;z-index:10;">
+      <div style="font-size:24px;color:#6b7280;font-weight:500;">機器を見分けるために、ネットワークは2種類の住所を使い分けます。</div>
+    </div>
+
+    <!-- 左：IPアドレス -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:80px;top:340px;width:880px;height:320px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;z-index:1;">
+    </div>
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:80px;top:340px;width:8px;height:320px;background:#2b7fff;border-radius:8px 0 0 8px;z-index:2;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:120px;top:370px;width:800px;height:44px;z-index:10;">
+      <div style="font-size:32px;font-weight:900;color:#0b2545;">IPアドレス <span
+          style="font-size:20px;color:#6b7280;font-weight:500;margin-left:10px;">論理アドレス</span></div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:120px;top:428px;width:800px;height:32px;z-index:10;">
+      <div style="font-size:20px;color:#374151;">ネットワーク上の機器を識別する住所。<b>変わることがある</b>。</div>
+    </div>
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:120px;top:478px;width:800px;height:88px;background:#f3f4f6;border-radius:6px;z-index:2;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:140px;top:490px;width:760px;height:68px;z-index:10;">
+      <div class="mono" style="font-size:32px;color:#0b2545;font-weight:700;letter-spacing:.02em;">192.168.1.24</div>
+      <div style="font-size:14px;color:#6b7280;margin-top:4px;">例：家庭・オフィスLAN内のPC</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:120px;top:580px;width:800px;height:60px;z-index:10;">
+      <div style="font-size:18px;color:#374151;line-height:1.6;">🏠 <b>アナロジー：家の住所</b><br>引っ越しをすれば変わる。ネットワークごとに割り当てられる。
+      </div>
+    </div>
+
+    <!-- 右：MACアドレス -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:980px;top:340px;width:860px;height:320px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;z-index:1;">
+    </div>
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:980px;top:340px;width:8px;height:320px;background:#f97316;border-radius:8px 0 0 8px;z-index:2;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:1020px;top:370px;width:800px;height:44px;z-index:10;">
+      <div style="font-size:32px;font-weight:900;color:#0b2545;">MACアドレス <span
+          style="font-size:20px;color:#6b7280;font-weight:500;margin-left:10px;">物理アドレス</span></div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:1020px;top:428px;width:800px;height:32px;z-index:10;">
+      <div style="font-size:20px;color:#374151;">機器のNICに<b>焼き込まれた固有ID</b>。原則変わらない。</div>
+    </div>
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:1020px;top:478px;width:800px;height:88px;background:#f3f4f6;border-radius:6px;z-index:2;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:1040px;top:490px;width:760px;height:68px;z-index:10;">
+      <div class="mono" style="font-size:32px;color:#0b2545;font-weight:700;letter-spacing:.02em;">A4:5E:60:F1:12:3B
+      </div>
+      <div style="font-size:14px;color:#6b7280;margin-top:4px;">例：NIC固有の番号</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:1020px;top:580px;width:800px;height:60px;z-index:10;">
+      <div style="font-size:18px;color:#374151;line-height:1.6;">🪪 <b>アナロジー：マイナンバー</b><br>その機器に一生ついてまわる番号。工場出荷時に決まる。
+      </div>
+    </div>
+
+    <!-- 下部：やってみよう演習 -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:80px;top:700px;width:1760px;height:280px;background:linear-gradient(135deg,#fff7ed 0%,#ffedd5 100%);border:2px solid #f97316;border-radius:10px;z-index:1;">
+    </div>
+
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:112px;top:730px;width:52px;height:52px;background:#f97316;border-radius:50%;z-index:5;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:112px;top:730px;width:52px;height:52px;z-index:10;">
+      <div style="text-align:center;line-height:52px;font-size:28px;">✋</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:180px;top:734px;width:900px;height:44px;z-index:10;">
+      <div style="font-size:30px;font-weight:900;color:#0b2545;">やってみよう —— 自分のPCのIPアドレスを確認する</div>
+    </div>
+
+    <!-- Windows 手順 -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:112px;top:800px;width:840px;height:160px;background:#fff;border:1px solid #fed7aa;border-radius:8px;z-index:2;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:132px;top:816px;width:800px;height:32px;z-index:10;">
+      <div style="font-size:20px;font-weight:900;color:#0b2545;">🪟 Windows の場合</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:132px;top:854px;width:800px;height:100px;z-index:10;">
+      <div style="font-size:17px;color:#374151;line-height:1.75;">
+        ①「スタート」→「cmd」で <b>コマンドプロンプト</b>を開く<br>
+        ② <span class="mono"
+          style="background:#0b2545;color:#fff;padding:3px 10px;border-radius:4px;">ipconfig/all</span>
+        と入力して Enter<br>
+        ③「IPv4アドレス」と「物理アドレス（MAC）」の欄をチェック
+      </div>
+    </div>
+
+    <!-- Mac 手順 -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:968px;top:800px;width:872px;height:160px;background:#fff;border:1px solid #fed7aa;border-radius:8px;z-index:2;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:988px;top:816px;width:800px;height:32px;z-index:10;">
+      <div style="font-size:20px;font-weight:900;color:#0b2545;">🍎 Mac の場合</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:988px;top:854px;width:830px;height:100px;z-index:10;">
+      <div style="font-size:17px;color:#374151;line-height:1.75;">
+        ①「システム設定」→「ネットワーク」を開く<br>
+        ② 接続中のWi-Fi/Ethernetの「詳細」ボタン<br>
+        ③「TCP/IP」でIP、「ハードウェア」でMACアドレスを確認
+      </div>
+    </div>
+
+    <!-- フッター -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:0;top:1010px;width:1920px;height:1px;background:#e5e7eb;z-index:5;"></div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:80px;top:1030px;width:1500px;height:32px;z-index:10;">
+      <div style="color:#6b7280;font-size:18px;">💡 IPが「宛先」、MACが「機器そのもの」。この2段構えで通信が成立します。</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:1720px;top:1030px;width:160px;height:32px;z-index:10;">
+      <div style="text-align:right;color:#6b7280;font-size:18px;font-weight:500;">05 / 13</div>
+    </div>
+
+  </div>
+</body>
+
+</html>

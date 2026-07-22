@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>DNSとDHCP</title>
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+
+<body>
+  <div class="slide-container" data-screen-label="06 DNSとDHCP">
+
+    <!-- ヘッダー -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:0;top:0;width:1920px;height:120px;background:#fbfaf7;z-index:1;border-bottom:1px solid #e5e7eb;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:80px;top:44px;width:600px;height:36px;z-index:10;">
+      <div style="color:#2b7fff;font-size:20px;font-weight:700;letter-spacing:.3em;">CHAPTER 01 ／ ネットワークとは</div>
+    </div>
+
+    <!-- タイトル -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:80px;top:160px;width:1760px;height:90px;z-index:10;">
+      <h1 style="margin:0;font-size:64px;font-weight:900;color:#0b2545;line-height:1.15;white-space:nowrap;">裏方の2大プロトコル
+        — <span style="color:#f97316;">DNS</span> と <span style="color:#f97316;">DHCP</span></h1>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:80px;top:260px;width:1760px;height:40px;z-index:10;">
+      <div style="font-size:24px;color:#6b7280;font-weight:500;">私たちが意識せずにインターネットを使えるのは、この2つが働いているからです。</div>
+    </div>
+
+    <!-- 左：DNS -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:80px;top:340px;width:880px;height:620px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;z-index:1;box-shadow:0 4px 14px rgba(11,37,69,.05);">
+    </div>
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:80px;top:340px;width:880px;height:80px;background:#e6f0ff;border-radius:10px 10px 0 0;z-index:2;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:120px;top:360px;width:820px;height:44px;z-index:10;">
+      <div style="font-size:34px;font-weight:900;color:#0b2545;"><span style="color:#2b7fff;">DNS</span>　Domain Name
+        System</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:120px;top:444px;width:820px;height:70px;z-index:10;">
+      <div style="font-size:22px;color:#374151;line-height:1.55;">
+        ドメイン名 → IPアドレス に<b>翻訳する仕組み</b>。<br>
+        🏠 <b>アナロジー：電話帳（住所録）</b>
+      </div>
+    </div>
+
+    <!-- DNS フロー図 -->
+    <svg data-object="true" data-object-type="image"
+      style="position:absolute;left:120px;top:530px;width:800px;height:400px;z-index:5;" viewBox="0 0 800 400">
+      <!-- 3 boxes -->
+      <rect x="20" y="150" width="180" height="110" rx="8" fill="#fbfaf7" stroke="#2b7fff" stroke-width="2" />
+      <text x="110" y="185" text-anchor="middle" font-size="30">💻</text>
+      <text x="110" y="220" text-anchor="middle" font-size="17" fill="#0b2545" font-weight="700"
+        font-family="Noto Sans JP">あなたのPC</text>
+      <text x="110" y="245" text-anchor="middle" font-size="13" fill="#6b7280" font-family="Noto Sans JP">ブラウザに入力</text>
+
+      <rect x="310" y="150" width="180" height="110" rx="8" fill="#e6f0ff" stroke="#2b7fff" stroke-width="2" />
+      <text x="400" y="185" text-anchor="middle" font-size="30">📖</text>
+      <text x="400" y="220" text-anchor="middle" font-size="17" fill="#0b2545" font-weight="700"
+        font-family="Noto Sans JP">DNSサーバー</text>
+      <text x="400" y="245" text-anchor="middle" font-size="13" fill="#6b7280"
+        font-family="Noto Sans JP">名前⇔IPを管理</text>
+
+      <rect x="600" y="150" width="180" height="110" rx="8" fill="#fbfaf7" stroke="#2b7fff" stroke-width="2" />
+      <text x="690" y="185" text-anchor="middle" font-size="30">🌐</text>
+      <text x="690" y="220" text-anchor="middle" font-size="17" fill="#0b2545" font-weight="700"
+        font-family="Noto Sans JP">Webサイト</text>
+      <text x="690" y="245" text-anchor="middle" font-size="13" fill="#6b7280" font-family="Noto Sans JP">実IPで応答</text>
+
+      <!-- Arrow 1: PC -> DNS -->
+      <defs>
+        <marker id="arr1" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <polygon points="0 0, 9 3, 0 6" fill="#2b7fff" />
+        </marker>
+      </defs>
+      <line x1="200" y1="180" x2="305" y2="180" stroke="#2b7fff" stroke-width="2" marker-end="url(#arr1)" />
+      <text x="252" y="165" text-anchor="middle" font-size="13" fill="#0b2545" font-family="Noto Sans JP"
+        font-weight="700">① 問合せ</text>
+      <text x="252" y="145" text-anchor="middle" font-size="12" fill="#6b7280" font-family="JetBrains Mono">example.com
+        ?</text>
+
+      <!-- Arrow 2: DNS -> PC -->
+      <line x1="305" y1="230" x2="200" y2="230" stroke="#f97316" stroke-width="2" marker-end="url(#arr2)" />
+      <marker id="arr2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 9 3, 0 6" fill="#f97316" />
+      </marker>
+      <text x="252" y="290" text-anchor="middle" font-size="13" fill="#0b2545" font-family="Noto Sans JP"
+        font-weight="700">② 回答</text>
+      <text x="252" y="270" text-anchor="middle" font-size="12" fill="#6b7280"
+        font-family="JetBrains Mono">93.184.216.34</text>
+
+      <!-- Arrow 3: PC -> Web -->
+      <path d="M 110 260 Q 400 360 690 260" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#arr3)" />
+      <marker id="arr3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 9 3, 0 6" fill="#10b981" />
+      </marker>
+      <text x="400" y="360" text-anchor="middle" font-size="14" fill="#0b2545" font-family="Noto Sans JP"
+        font-weight="700">③ そのIPへ直接アクセス</text>
+
+      <!-- 入口 -->
+      <text x="110" y="120" text-anchor="middle" font-size="14" fill="#374151" font-family="Noto Sans JP">「example.com
+        を開きたい」</text>
+    </svg>
+
+    <!-- 右：DHCP -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:980px;top:340px;width:860px;height:620px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;z-index:1;box-shadow:0 4px 14px rgba(11,37,69,.05);">
+    </div>
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:980px;top:340px;width:860px;height:80px;background:#ffedd5;border-radius:10px 10px 0 0;z-index:2;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:1020px;top:360px;width:820px;height:44px;z-index:10;">
+      <div style="font-size:34px;font-weight:900;color:#0b2545;"><span style="color:#f97316;">DHCP</span>　Dynamic Host
+        Configuration Protocol</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:1020px;top:444px;width:820px;height:70px;z-index:10;">
+      <div style="font-size:22px;color:#374151;line-height:1.55;">
+        IPアドレスなどの設定情報を<b>自動で配る</b>プロトコル。<br>
+        📮 <b>アナロジー：受付での番号札発行</b>
+      </div>
+    </div>
+
+    <!-- DHCP フロー図 -->
+    <svg data-object="true" data-object-type="image"
+      style="position:absolute;left:1020px;top:530px;width:780px;height:400px;z-index:5;" viewBox="0 0 780 400">
+      <!-- 左：新規端末 -->
+      <rect x="20" y="150" width="200" height="110" rx="8" fill="#fbfaf7" stroke="#f97316" stroke-width="2" />
+      <text x="120" y="185" text-anchor="middle" font-size="30">💻</text>
+      <text x="120" y="220" text-anchor="middle" font-size="17" fill="#0b2545" font-weight="700"
+        font-family="Noto Sans JP">新しく接続した端末</text>
+      <text x="120" y="245" text-anchor="middle" font-size="13" fill="#6b7280" font-family="Noto Sans JP">IP未設定</text>
+
+      <!-- 右：DHCPサーバー -->
+      <rect x="560" y="150" width="200" height="110" rx="8" fill="#ffedd5" stroke="#f97316" stroke-width="2" />
+      <text x="660" y="185" text-anchor="middle" font-size="30">📮</text>
+      <text x="660" y="220" text-anchor="middle" font-size="17" fill="#0b2545" font-weight="700"
+        font-family="Noto Sans JP">DHCPサーバー</text>
+      <text x="660" y="245" text-anchor="middle" font-size="13" fill="#6b7280" font-family="Noto Sans JP">（ルーター内）</text>
+
+      <!-- 矢印1 → -->
+      <defs>
+        <marker id="arrd1" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <polygon points="0 0, 9 3, 0 6" fill="#f97316" />
+        </marker>
+        <marker id="arrd2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <polygon points="0 0, 9 3, 0 6" fill="#10b981" />
+        </marker>
+      </defs>
+      <line x1="220" y1="180" x2="555" y2="180" stroke="#f97316" stroke-width="2" marker-end="url(#arrd1)" />
+      <text x="387" y="160" text-anchor="middle" font-size="14" fill="#0b2545" font-family="Noto Sans JP"
+        font-weight="700">① 「IPを1つください」</text>
+
+      <line x1="555" y1="230" x2="220" y2="230" stroke="#10b981" stroke-width="2" marker-end="url(#arrd2)" />
+      <text x="387" y="290" text-anchor="middle" font-size="14" fill="#0b2545" font-family="Noto Sans JP"
+        font-weight="700">② IP・DNS・ゲートウェイを一括配布</text>
+      <text x="387" y="315" text-anchor="middle" font-size="13" fill="#6b7280" font-family="JetBrains Mono">192.168.1.24
+        / 255.255.255.0 …</text>
+
+      <text x="120" y="120" text-anchor="middle" font-size="14" fill="#374151"
+        font-family="Noto Sans JP">Wi-Fiに接続した瞬間</text>
+    </svg>
+
+    <!-- フッター -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:0;top:1000px;width:1920px;height:1px;background:#e5e7eb;z-index:5;"></div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:80px;top:1020px;width:1500px;height:32px;z-index:10;">
+      <div style="color:#6b7280;font-size:18px;">💡 DNSは「名前を引く」、DHCPは「設定を配る」。両方止まるとインターネットは使えません。</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:1720px;top:1020px;width:160px;height:32px;z-index:10;">
+      <div style="text-align:right;color:#6b7280;font-size:18px;font-weight:500;">06 / 13</div>
+    </div>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+/* ============================================================
+   初心者向け オフィスネットワーク概論 — 共通テーマ
+   ============================================================ */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap");
+
+:root {
+  --navy-900: #0b2545;
+  --navy-800: #13315c;
+  --navy-700: #1d4a80;
+  --blue-500: #2b7fff;
+  --blue-100: #e6f0ff;
+  --orange-500: #f97316;
+  --orange-400: #fb923c;
+  --orange-100: #ffedd5;
+  --green-500: #10b981;
+  --green-100: #d1fae5;
+  --red-500: #ef4444;
+  --red-100: #fee2e2;
+  --gray-900: #1f2937;
+  --gray-700: #374151;
+  --gray-500: #6b7280;
+  --gray-300: #d1d5db;
+  --gray-100: #f3f4f6;
+  --gray-50: #f9fafb;
+  --paper: #fbfaf7;
+  --grid-line: rgba(11, 37, 69, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Noto Sans JP", "Yu Gothic UI", "Meiryo", sans-serif;
+  color: var(--gray-900);
+  -webkit-font-smoothing: antialiased;
+}
+.slide-container {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  background: var(--paper);
+}
+.mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}

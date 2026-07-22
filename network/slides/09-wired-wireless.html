@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>有線と無線</title>
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+
+<body>
+  <div class="slide-container" data-screen-label="09 有線と無線LAN">
+
+    <!-- ヘッダー -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:0;top:0;width:1920px;height:120px;background:#fbfaf7;z-index:1;border-bottom:1px solid #e5e7eb;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:80px;top:44px;width:600px;height:36px;z-index:10;">
+      <div style="color:#10b981;font-size:20px;font-weight:700;letter-spacing:.3em;">CHAPTER 02 ／ オフィスの構成要素</div>
+    </div>
+
+    <!-- タイトル -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:80px;top:160px;width:1760px;height:90px;z-index:10;">
+      <h1 style="margin:0;font-size:64px;font-weight:900;color:#0b2545;line-height:1.15;white-space:nowrap;">有線LAN と
+        無線LAN — <span style="color:#10b981;">使い分けの判断</span></h1>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:80px;top:260px;width:1760px;height:40px;z-index:10;">
+      <div style="font-size:24px;color:#6b7280;font-weight:500;">「安定」vs「便利」。それぞれの特性を知って、用途に合わせて選びます。</div>
+    </div>
+
+    <!-- 比較表 -->
+    <div data-object="true" data-object-type="table"
+      style="position:absolute;left:80px;top:340px;width:1240px;height:490px;z-index:5;">
+      <table
+        style="width:100%;height:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;font-size:22px;color:#374151;box-shadow:0 4px 14px rgba(11,37,69,.05);">
+        <thead>
+          <tr style="background:#0b2545;color:#fff;">
+            <th style="text-align:left;padding:24px 28px;font-size:22px;font-weight:700;width:26%;">比較項目</th>
+            <th style="text-align:left;padding:24px 28px;font-size:24px;font-weight:900;width:37%;">🔌 有線 LAN</th>
+            <th style="text-align:left;padding:24px 28px;font-size:24px;font-weight:900;width:37%;">📡 無線 LAN</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td
+              style="padding:20px 28px;border-top:1px solid #e5e7eb;font-weight:700;color:#0b2545;background:#f9fafb;">
+              通信の安定性</td>
+            <td style="padding:20px 28px;border-top:1px solid #e5e7eb;"><b style="color:#10b981;">◎ 高い</b>　物理配線</td>
+            <td style="padding:20px 28px;border-top:1px solid #e5e7eb;"><b style="color:#f97316;">△ 環境依存</b>　電波干渉あり</td>
+          </tr>
+          <tr>
+            <td
+              style="padding:20px 28px;border-top:1px solid #e5e7eb;font-weight:700;color:#0b2545;background:#f9fafb;">
+              通信速度</td>
+            <td style="padding:20px 28px;border-top:1px solid #e5e7eb;"><b style="color:#10b981;">◎ 速い</b>　規格通り出やすい</td>
+            <td style="padding:20px 28px;border-top:1px solid #e5e7eb;"><b style="color:#f97316;">○ 十分</b>　条件次第で低下</td>
+          </tr>
+          <tr>
+            <td
+              style="padding:20px 28px;border-top:1px solid #e5e7eb;font-weight:700;color:#0b2545;background:#f9fafb;">
+              配線の手間</td>
+            <td style="padding:20px 28px;border-top:1px solid #e5e7eb;"><b style="color:#f97316;">△ 必要</b>　ケーブル敷設</td>
+            <td style="padding:20px 28px;border-top:1px solid #e5e7eb;"><b style="color:#10b981;">◎ 不要</b>　電源だけでOK</td>
+          </tr>
+          <tr>
+            <td
+              style="padding:20px 28px;border-top:1px solid #e5e7eb;font-weight:700;color:#0b2545;background:#f9fafb;">
+              機器の移動性</td>
+            <td style="padding:20px 28px;border-top:1px solid #e5e7eb;"><b style="color:#ef4444;">× 固定</b></td>
+            <td style="padding:20px 28px;border-top:1px solid #e5e7eb;"><b style="color:#10b981;">◎ 自由</b></td>
+          </tr>
+          <tr>
+            <td
+              style="padding:20px 28px;border-top:1px solid #e5e7eb;font-weight:700;color:#0b2545;background:#f9fafb;">
+              セキュリティ</td>
+            <td style="padding:20px 28px;border-top:1px solid #e5e7eb;"><b style="color:#10b981;">◎ 物理制御しやすい</b></td>
+            <td style="padding:20px 28px;border-top:1px solid #e5e7eb;"><b style="color:#f97316;">△ 暗号化必須</b>　WPA2/3
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="padding:20px 28px;border-top:1px solid #e5e7eb;font-weight:700;color:#0b2545;background:#f9fafb;">
+              向いている用途</td>
+            <td style="padding:20px 28px;border-top:1px solid #e5e7eb;">サーバー、据置PC、会議室TV</td>
+            <td style="padding:20px 28px;border-top:1px solid #e5e7eb;">ノートPC、スマホ、来客用</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 右：チェックポイント -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:1360px;top:340px;width:480px;height:490px;background:linear-gradient(135deg,#e6f0ff 0%,#f0f7ff 100%);border:2px solid #2b7fff;border-radius:10px;z-index:1;">
+    </div>
+
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:1392px;top:372px;width:52px;height:52px;background:#2b7fff;border-radius:50%;z-index:5;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:1392px;top:372px;width:52px;height:52px;z-index:10;">
+      <div style="text-align:center;line-height:52px;font-size:28px;">🔍</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:1460px;top:378px;width:360px;height:40px;z-index:10;">
+      <div style="font-size:24px;font-weight:900;color:#0b2545;">チェックポイント</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:1392px;top:444px;width:420px;height:40px;z-index:10;">
+      <div style="font-size:20px;font-weight:700;color:#0b2545;">身の回りを探してみよう：</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:1392px;top:496px;width:428px;height:320px;z-index:10;">
+      <div style="font-size:18px;color:#374151;line-height:1.9;">
+        ☐　自分のPCは<b>有線 / 無線</b>どちら？<br>
+        ☐　オフィスのWi-Fi <b>SSID</b>は何？<br>
+        ☐　プリンタは <b>有線接続</b>か？<br>
+        ☐　部屋のどこかに<b>スイッチHUB</b>はある？<br>
+        ☐　ケーブルの色分けはある？<br>
+        ☐　ルーターは何色の <b>LED</b> が点灯している？
+      </div>
+    </div>
+
+    <!-- 下部：セキュリティ注意 -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:80px;top:860px;width:1760px;height:110px;background:#fef2f2;border-left:6px solid #ef4444;border-radius:6px;z-index:1;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:120px;top:880px;width:60px;height:60px;z-index:10;">
+      <div style="font-size:36px;">⚠️</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:180px;top:895px;width:1620px;height:80px;z-index:10;">
+      <div style="font-size:22px;color:#0b2545;line-height:1.6;">
+        <b>無線LANは「見えない」ぶん危険も見えない。</b>
+        電波は壁を越えて建物の外にも届くため、暗号化（WPA2/WPA3）と強いパスワードは必須です。
+      </div>
+    </div>
+
+    <!-- フッター -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute;left:0;top:1010px;width:1920px;height:1px;background:#e5e7eb;z-index:5;"></div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:80px;top:1030px;width:1500px;height:32px;z-index:10;">
+      <div style="color:#6b7280;font-size:18px;">💡 「絶対に切れたら困る機器」は有線、「動きながら使いたい機器」は無線が原則。</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute;left:1720px;top:1030px;width:160px;height:32px;z-index:10;">
+      <div style="text-align:right;color:#6b7280;font-size:18px;font-weight:500;">09 / 13</div>
+    </div>
+
+  </div>
+</body>
+
+</html>
