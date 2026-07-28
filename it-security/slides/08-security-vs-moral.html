@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Slide 8 - セキュリティ vs モラル</title>
+  <link rel="stylesheet" href="../assets/chrome.css">
+  <style>
+    .slide-container {
+      background: #FAF7F2;
+    }
+
+    .page-header {
+      position: absolute;
+      left: 90px;
+      top: 60px;
+      z-index: 10;
+    }
+
+    .page-num {
+      font-size: 14px;
+      letter-spacing: 0.32em;
+      color: #00897B;
+      font-weight: 700;
+      display: inline-block;
+      padding-bottom: 8px;
+      border-bottom: 3px solid #00897B;
+    }
+
+    .h-title {
+      font-size: 54px;
+      font-weight: 900;
+      color: #0F2540;
+      margin-top: 18px;
+      line-height: 1.1;
+    }
+
+    .h-sub {
+      margin-top: 14px;
+      font-size: 22px;
+      color: #6B7B8C;
+    }
+
+    .compare-twin {
+      position: absolute;
+      left: 90px;
+      top: 280px;
+      width: 1740px;
+      height: 540px;
+      z-index: 10;
+    }
+
+    .side-card {
+      position: absolute;
+      top: 0;
+      width: 830px;
+      height: 520px;
+      background: #fff;
+      border-radius: 24px;
+      padding: 32px 36px;
+      box-shadow: 0 14px 40px rgba(15, 37, 64, 0.10);
+    }
+
+    .sec-side {
+      left: 0;
+      border-top: 8px solid #00897B;
+    }
+
+    .mor-side {
+      left: 910px;
+      border-top: 8px solid #E76F51;
+    }
+
+    .side-illust {
+      position: absolute;
+      top: 32px;
+      right: 32px;
+      width: 170px;
+      height: 170px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 90px;
+    }
+
+    .sec-side .side-illust {
+      background: linear-gradient(135deg, #00897B, #26A69A);
+    }
+
+    .mor-side .side-illust {
+      background: linear-gradient(135deg, #E76F51, #F4A261);
+    }
+
+    .side-tag {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+    }
+
+    .sec-side .side-tag {
+      background: rgba(0, 137, 123, 0.15);
+      color: #00897B;
+    }
+
+    .mor-side .side-tag {
+      background: rgba(231, 111, 81, 0.15);
+      color: #E76F51;
+    }
+
+    .side-h {
+      font-size: 36px;
+      font-weight: 900;
+      color: #0F2540;
+      margin-top: 14px;
+    }
+
+    .side-meta {
+      font-size: 16px;
+      color: #6B7B8C;
+      margin-top: 8px;
+      font-weight: 600;
+    }
+
+    .side-eq {
+      margin-top: 22px;
+      padding: 18px 22px;
+      background: rgba(0, 0, 0, 0.04);
+      border-radius: 14px;
+      font-size: 19px;
+      color: #0F2540;
+      line-height: 1.55;
+    }
+
+    .sec-side .side-eq {
+      background: rgba(0, 137, 123, 0.08);
+      color: #00897B;
+      font-weight: 700;
+    }
+
+    .mor-side .side-eq {
+      background: rgba(231, 111, 81, 0.08);
+      color: #E76F51;
+      font-weight: 700;
+    }
+
+    .side-list {
+      margin-top: 18px;
+      font-size: 18px;
+      color: #2A4060;
+      line-height: 1.55;
+      padding-left: 20px;
+    }
+
+    .side-list li {
+      margin-bottom: 8px;
+    }
+
+    .side-list li b {
+      color: #0F2540;
+      font-weight: 800;
+    }
+
+    .risk-strip {
+      position: absolute;
+      left: 90px;
+      bottom: 80px;
+      width: 1740px;
+      height: 60px;
+      z-index: 11;
+      background: linear-gradient(135deg, #0F2540 0%, #1B3A5C 100%);
+      border-radius: 12px;
+      padding: 0 28px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 8px 24px rgba(15, 37, 64, 0.25);
+    }
+
+    .risk-emoji {
+      font-size: 30px;
+      flex: none;
+    }
+
+    .risk-body {
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    .risk-body b {
+      color: #FFD479;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slide-container">
+    <div data-object="true" data-object-type="textbox" class="page-header">
+      <div class="page-num">07 — MORAL BASICS</div>
+      <div class="h-title">セキュリティ（技術）とモラル（マナー）の違い</div>
+      <div class="h-sub">両方あって初めて安全。「建物の鍵」と「住人のマナー」の関係で考えると腑に落ちます</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" class="compare-twin">
+      <div class="side-card sec-side">
+        <div class="side-illust">🔒</div>
+        <span class="side-tag">SECURITY</span>
+        <div class="side-h">情報セキュリティ</div>
+        <div class="side-meta">＝ ハード面の対策（システム・技術）</div>
+
+        <div class="side-eq">「システムやデータをどう <strong>守るか</strong>」</div>
+
+        <ul class="side-list">
+          <li><b>ツール／技術</b>：ファイアウォール、暗号化、アクセス制御</li>
+          <li><b>担当</b>：IT部門・情シス・セキュリティベンダー</li>
+          <li><b>やってくるモノ</b>：ウイルス、不正アクセス、自然災害</li>
+        </ul>
+      </div>
+
+      <div class="side-card mor-side">
+        <div class="side-illust">🤝</div>
+        <span class="side-tag">MORAL</span>
+        <div class="side-h">情報モラル</div>
+        <div class="side-meta">＝ ソフト面の対策（人の意識・判断）</div>
+
+        <div class="side-eq">「得た情報をどう <strong>正しく扱うか</strong>」</div>
+
+        <ul class="side-list">
+          <li><b>基準</b>：社内規程、法律、倫理観、世間一般の良識</li>
+          <li><b>担当</b>：すべての従業員・社会人ひとりひとり</li>
+          <li><b>やってくるモノ</b>：うっかりミス、不用意な発言、知識不足</li>
+        </ul>
+      </div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" class="risk-strip">
+      <div class="risk-emoji">⚠️</div>
+      <div class="risk-body">
+        <b>モラル欠如 →</b> SNS <b style="color:#FFD479;">炎上</b> ／ <b style="color:#FFD479;">信頼失墜</b> ／ <b
+          style="color:#FFD479;">法的責任</b>。
+        最新技術でも人の判断ミスは止められません。
+      </div>
+    </div>
+
+    <!-- Page footer -->
+    <div data-object="true" data-object-type="textbox" class="page-footer">
+      <span class="pf-current">08</span><span class="pf-sep">/</span><span class="pf-total">13</span>
+    </div>
+  </div>
+</body>
+
+</html>

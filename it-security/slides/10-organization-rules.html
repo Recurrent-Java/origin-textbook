@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Slide 10 - 組織でのルール</title>
+  <link rel="stylesheet" href="../assets/chrome.css">
+  <style>
+    .slide-container {
+      background: #FAF7F2;
+    }
+
+    .page-header {
+      position: absolute;
+      left: 90px;
+      top: 40px;
+      z-index: 10;
+    }
+
+    .page-num {
+      font-size: 14px;
+      letter-spacing: 0.32em;
+      color: #00897B;
+      font-weight: 700;
+      display: inline-block;
+      padding-bottom: 8px;
+      border-bottom: 3px solid #00897B;
+    }
+
+    .h-title {
+      font-size: 46px;
+      font-weight: 900;
+      color: #0F2540;
+      margin-top: 14px;
+      line-height: 1.1;
+    }
+
+    .h-sub {
+      margin-top: 12px;
+      font-size: 19px;
+      color: #1B3A5C;
+      font-weight: 600;
+    }
+
+    .okng-grid {
+      position: absolute;
+      left: 90px;
+      top: 280px;
+      width: 1740px;
+      height: 600px;
+      z-index: 10;
+    }
+
+    .col-header {
+      font-size: 16px;
+      letter-spacing: 0.3em;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 14px;
+      display: inline-block;
+    }
+
+    .col-ok .col-header {
+      background: rgba(0, 137, 123, 0.15);
+      color: #00897B;
+    }
+
+    .col-ng .col-header {
+      background: rgba(231, 111, 81, 0.15);
+      color: #E76F51;
+    }
+
+    .col-ok,
+    .col-ng {
+      position: absolute;
+      top: 0;
+      width: 830px;
+      height: 600px;
+      background: #fff;
+      border-radius: 24px;
+      padding: 26px 32px;
+      box-shadow: 0 14px 40px rgba(15, 37, 64, 0.10);
+    }
+
+    .col-ok {
+      left: 0;
+      border-top: 8px solid #00897B;
+    }
+
+    .col-ng {
+      left: 910px;
+      border-top: 8px solid #E76F51;
+    }
+
+    .col-h {
+      font-size: 30px;
+      font-weight: 900;
+      color: #0F2540;
+      margin-top: 12px;
+    }
+
+    .col-sub {
+      font-size: 14px;
+      color: #6B7B8C;
+      margin-top: 4px;
+    }
+
+    .rule-row {
+      margin-top: 12px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      background: #FAF7F2;
+      display: flex;
+      gap: 16px;
+    }
+
+    .col-ok .rule-row {
+      background: rgba(0, 137, 123, 0.06);
+    }
+
+    .col-ng .rule-row {
+      background: rgba(231, 111, 81, 0.06);
+    }
+
+    .rrow-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 900;
+      flex: none;
+    }
+
+    .col-ok .rrow-icon {
+      background: #00897B;
+      color: #fff;
+    }
+
+    .col-ng .rrow-icon {
+      background: #E76F51;
+      color: #fff;
+    }
+
+    .rrow-text {
+      font-size: 16px;
+      color: #0F2540;
+      line-height: 1.45;
+    }
+
+    .rrow-text b {
+      font-size: 17px;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .shadow-it {
+      position: absolute;
+      left: 90px;
+      bottom: 30px;
+      width: 1740px;
+      height: 110px;
+      z-index: 11;
+      background: linear-gradient(135deg, #1B3A5C 0%, #2A5C8A 100%);
+      border-radius: 16px;
+      padding: 18px 28px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      box-shadow: 0 12px 36px rgba(15, 37, 64, 0.25);
+    }
+
+    .sh-icon {
+      font-size: 48px;
+      flex: none;
+    }
+
+    .sh-body {
+      flex: 1;
+    }
+
+    .sh-h {
+      font-size: 20px;
+      font-weight: 800;
+      color: #FFD479;
+      margin-bottom: 4px;
+    }
+
+    .sh-b {
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .sh-b b {
+      color: #FFD479;
+      font-weight: 800;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slide-container">
+    <div data-object="true" data-object-type="textbox" class="page-header">
+      <div class="page-num">09 — ORGANIZATION</div>
+      <div class="h-title">インサイダー・情報漏洩を<span style="color:#1B3A5C;">防ぐルール</span></div>
+      <div class="h-sub">組織で「やってはいけない／やるべき」基本動作を確認しましょう</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" class="okng-grid">
+      <div class="col-ok">
+        <div class="col-header">✓ OK EXAMPLE</div>
+        <div class="col-h">適切な取り扱い</div>
+        <div class="col-sub">GOOD PRACTICES</div>
+
+        <div class="rule-row">
+          <div class="rrow-icon">1</div>
+          <div class="rrow-text">
+            <b>業務データは会社の公式環境のみで扱う</b>
+            会社のクラウド、許可されたPC・ネットワークで作業。個人アカウント・サービスにアップロードしない。
+          </div>
+        </div>
+
+        <div class="rule-row">
+          <div class="rrow-icon">2</div>
+          <div class="rrow-text">
+            <b>離席時は必ず画面ロック</b>
+            Windows： <b>Win + L</b> ／ Mac： <b>Cmd + Ctrl + Q</b> を習慣化。昼食・打合せ・トイレも対象。
+          </div>
+        </div>
+
+        <div class="rule-row">
+          <div class="rrow-icon">3</div>
+          <div class="rrow-text">
+            <b>許可された公式AI・ツールだけ使う</b>
+            会社契約の生成AI環境で業務データを扱う。シャドーITに情報を持ち込まない。
+          </div>
+        </div>
+      </div>
+
+      <div class="col-ng">
+        <div class="col-header">✕ NG EXAMPLE</div>
+        <div class="col-h">やってはいけない行動</div>
+        <div class="col-sub">RISKY BEHAVIORS</div>
+
+        <div class="rule-row">
+          <div class="rrow-icon">1</div>
+          <div class="rrow-text">
+            <b>個人Googleドライブに業務データを保存</b>
+            退職後にデータごと流出。メールで共有した時点でも情報管理外になりやすい。
+          </div>
+        </div>
+
+        <div class="rule-row">
+          <div class="rrow-icon">2</div>
+          <div class="rrow-text">
+            <b>離席時にログイン画面を開いたまま離れる</b>
+            隣の席や清掃スタッフから簡単閲覧可能。自席が無い場合でも同様。
+          </div>
+        </div>
+
+        <div class="rule-row">
+          <div class="rrow-icon">3</div>
+          <div class="rrow-text">
+            <b>未承認の無料AIや VPN に機密を貼り付け</b>
+            入力データが学習・保存され、競合や全世界に漏洩するリスクあり。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" class="shadow-it">
+      <div class="sh-icon">🕶️</div>
+      <div class="sh-body">
+        <div class="sh-h">⚠ シャドーIT ── 現場の最大の落とし穴</div>
+        <div class="sh-b">会社<b>が把握していない</b>個人契約サービスや未承認ソフトに情報が流れること。<br>
+          「便利だから」「無料だから」の選択が、知らぬ間に重大なインシデントの入口になります。</div>
+      </div>
+    </div>
+
+    <!-- Page footer -->
+    <div data-object="true" data-object-type="textbox" class="page-footer">
+      <span class="pf-current">10</span><span class="pf-sep">/</span><span class="pf-total">13</span>
+    </div>
+  </div>
+</body>
+
+</html>

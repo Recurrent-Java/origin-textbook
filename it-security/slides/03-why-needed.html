@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Slide 3 - なぜ必要か</title>
+  <link rel="stylesheet" href="../assets/chrome.css">
+  <style>
+    .slide-container {
+      background: #FAF7F2;
+    }
+
+    .page-header {
+      position: absolute;
+      left: 90px;
+      top: 60px;
+      width: 1740px;
+      z-index: 10;
+    }
+
+    .page-num {
+      font-size: 14px;
+      letter-spacing: 0.32em;
+      color: #00897B;
+      font-weight: 700;
+      display: inline-block;
+      padding-bottom: 8px;
+      border-bottom: 3px solid #00897B;
+    }
+
+    .page-header {
+      width: 1740px;
+    }
+
+    .h-title {
+      font-size: 54px;
+      font-weight: 900;
+      color: #0F2540;
+      margin-top: 18px;
+      line-height: 1.1;
+    }
+
+    .h-sub {
+      margin-top: 14px;
+      font-size: 22px;
+      color: #1B3A5C;
+      font-weight: 600;
+    }
+
+    .hook-line {
+      position: absolute;
+      left: 90px;
+      top: 280px;
+      width: 1740px;
+      z-index: 9;
+      background: linear-gradient(135deg, #0F2540 0%, #1B3A5C 100%);
+      border-radius: 18px;
+      padding: 22px 32px;
+      color: #fff;
+      box-shadow: 0 12px 40px rgba(15, 37, 64, 0.20);
+    }
+
+    .hook-label {
+      font-size: 14px;
+      letter-spacing: 0.25em;
+      color: #FFD479;
+      font-weight: 700;
+    }
+
+    .hook-body {
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-top: 10px;
+    }
+
+    .hook-body b {
+      color: #FFD479;
+    }
+
+    .compare-wrap {
+      position: absolute;
+      left: 90px;
+      top: 440px;
+      width: 1740px;
+      height: 420px;
+      z-index: 10;
+    }
+
+    .balance-beam {
+      position: absolute;
+      left: 50%;
+      top: 140px;
+      transform: translateX(-50%);
+      width: 1200px;
+      height: 14px;
+      background: linear-gradient(90deg, #00897B 0%, #6B7B8C 50%, #E76F51 100%);
+      border-radius: 7px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .fulcrum {
+      position: absolute;
+      left: 50%;
+      top: 130px;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 60px;
+      background: #0F2540;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFD479;
+      font-weight: 800;
+      font-size: 14px;
+      z-index: 2;
+    }
+
+    .benefit-card,
+    .risk-card {
+      position: absolute;
+      top: 30px;
+      width: 540px;
+      height: 380px;
+      border-radius: 24px;
+      padding: 32px;
+      background: #fff;
+      box-shadow: 0 12px 36px rgba(15, 37, 64, 0.08);
+    }
+
+    .benefit-card {
+      left: 0;
+      border-top: 8px solid #00897B;
+    }
+
+    .risk-card {
+      right: 0;
+      border-top: 8px solid #E76F51;
+    }
+
+    .card-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 16px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+
+    .benefit-card .card-tag {
+      background: rgba(0, 137, 123, 0.12);
+      color: #00897B;
+    }
+
+    .risk-card .card-tag {
+      background: rgba(231, 111, 81, 0.12);
+      color: #E76F51;
+    }
+
+    .card-h {
+      font-size: 28px;
+      font-weight: 800;
+      color: #0F2540;
+      margin: 18px 0 14px;
+    }
+
+    .card-b {
+      font-size: 19px;
+      color: #2A4060;
+      line-height: 1.55;
+    }
+
+    .card-b li {
+      margin-bottom: 8px;
+    }
+
+    .def-card {
+      position: absolute;
+      left: 660px;
+      top: 470px;
+      width: 600px;
+      height: 380px;
+      z-index: 10;
+      background: linear-gradient(135deg, #FFF7E8 0%, #FFE9D2 100%);
+      border-radius: 24px;
+      padding: 26px 28px;
+      border: 2px dashed #E76F51;
+    }
+
+    .def-h {
+      font-size: 14px;
+      letter-spacing: 0.25em;
+      color: #E76F51;
+      font-weight: 700;
+    }
+
+    .def-title {
+      font-size: 28px;
+      font-weight: 900;
+      color: #0F2540;
+      margin-top: 8px;
+    }
+
+    .def-row {
+      font-size: 17px;
+      color: #2A4060;
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+
+    .def-row b {
+      color: #00897B;
+      font-size: 19px;
+    }
+
+    .def-row.r b {
+      color: #E76F51;
+    }
+
+    .bottom-line {
+      position: absolute;
+      left: 90px;
+      bottom: 60px;
+      width: 1740px;
+      z-index: 10;
+      text-align: center;
+      font-size: 22px;
+      color: #0F2540;
+    }
+
+    .bottom-line b {
+      color: #E76F51;
+      font-weight: 800;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slide-container">
+    <div data-object="true" data-object-type="textbox" class="page-header">
+      <div class="page-num">02 — BACKGROUND</div>
+      <div class="h-title">デジタル社会の便利さと<br>裏に潜むリスク</div>
+      <div class="h-sub">スマホやPCの普及で便利になった一方、誰もが「被害者」にも「加害者」にもなります</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" class="hook-line">
+      <div class="hook-label">⚠ THE KEY MESSAGE</div>
+      <div class="hook-body">IT活用は <b>「攻め（便利さの享受）」</b> と <b>「守り（被害／加害の回避）」</b> の両輪で考える時代へ。</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" class="compare-wrap">
+      <div class="balance-beam"></div>
+      <div class="fulcrum">VS</div>
+
+      <div class="benefit-card">
+        <div class="card-tag">BENEFIT</div>
+        <div class="card-h">便利さの享受</div>
+        <ul class="card-b" style="padding-left:20px; margin:0;">
+          <li>場所を問わない仕事・買い物・連絡</li>
+          <li>クラウドでデータ共有が瞬時に</li>
+          <li>AIや自動化で作業効率が大幅UP</li>
+        </ul>
+      </div>
+
+      <div class="risk-card">
+        <div class="card-tag">RISK</div>
+        <div class="card-h">潜むリスク</div>
+        <ul class="card-b" style="padding-left:20px; margin:0;">
+          <li>個人情報・機密データの漏洩</li>
+          <li>金銭被害（フィッシング、詐欺）</li>
+          <li>SNS炎上や著作権トラブル</li>
+        </ul>
+      </div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" class="def-card">
+      <div class="def-h">🔑 2つのキーワード</div>
+      <div class="def-title">セキュリティ と モラル</div>
+      <div class="def-row"><b>情報セキュリティ</b><br>= 大切なデータやシステムを「守る」技術と対策</div>
+      <div class="def-row r"><b>情報モラル</b><br>= ネット社会で他人に迷惑をかけない「倫理・マナー」</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" class="bottom-line">
+      本講座では、この <b>2本柱</b> を3時間で集中的に学びます。
+    </div>
+
+    <!-- Page footer -->
+    <div data-object="true" data-object-type="textbox" class="page-footer">
+      <span class="pf-current">03</span><span class="pf-sep">/</span><span class="pf-total">13</span>
+    </div>
+  </div>
+</body>
+
+</html>

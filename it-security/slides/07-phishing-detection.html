@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Slide 7 - 怪しいメールの見分け方</title>
+  <link rel="stylesheet" href="../assets/chrome.css">
+  <style>
+    .slide-container {
+      background: #FAF7F2;
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+    }
+
+    .page-header {
+      position: absolute;
+      left: 90px;
+      top: 60px;
+      z-index: 10;
+    }
+
+    .page-num {
+      font-size: 14px;
+      letter-spacing: 0.32em;
+      color: #00897B;
+      font-weight: 700;
+      display: inline-block;
+      padding-bottom: 8px;
+      border-bottom: 3px solid #00897B;
+    }
+
+    .h-title {
+      font-size: 54px;
+      font-weight: 900;
+      color: #0F2540;
+      margin-top: 18px;
+      line-height: 1.1;
+    }
+
+    .h-sub {
+      margin-top: 14px;
+      font-size: 22px;
+      color: #6B7B8C;
+    }
+
+    /* 左側：メールウィンドウ */
+    .mail-window {
+      position: absolute;
+      left: 90px;
+      top: 260px;
+      width: 860px;
+      height: 650px;
+      z-index: 10;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 20px 50px rgba(15, 37, 64, 0.18);
+      overflow: hidden;
+    }
+
+    .mail-tabs {
+      display: flex;
+      background: #ECEEF1;
+      padding: 8px 12px 0;
+    }
+
+    .mail-tab {
+      padding: 10px 18px;
+      background: #fff;
+      border-radius: 8px 8px 0 0;
+      font-size: 14px;
+      color: #0F2540;
+      font-weight: 600;
+      margin-right: 4px;
+    }
+
+    .mail-tab.inactive {
+      background: #DDE1E6;
+      color: #6B7B8C;
+    }
+
+    .mail-subj {
+      font-size: 24px;
+      font-weight: 800;
+      color: #E76F51;
+      margin-top: 14px;
+      padding: 0 30px;
+    }
+
+    .mail-header {
+      padding: 16px 30px;
+      background: #fff;
+      border-bottom: 1px solid #E8EDF2;
+    }
+
+    .mail-from {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .mail-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #E76F51;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .mail-from-info {
+      flex: 1;
+    }
+
+    .mail-from-line {
+      font-size: 14px;
+      color: #6B7B8C;
+    }
+
+    .mail-from-line b {
+      color: #0F2540;
+      font-size: 17px;
+      margin-right: 8px;
+    }
+
+    .mail-date {
+      font-size: 13px;
+      color: #6B7B8C;
+      margin-top: 2px;
+    }
+
+    .mail-body {
+      padding: 24px 30px;
+      background: #fff;
+    }
+
+    .mail-greeting {
+      font-size: 17px;
+      color: #0F2540;
+      margin-bottom: 12px;
+    }
+
+    .mail-text {
+      font-size: 16px;
+      color: #2A4060;
+      line-height: 1.6;
+    }
+
+    .mail-text b.warn {
+      color: #E76F51;
+      font-weight: 800;
+    }
+
+    .mail-cta {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 14px 28px;
+      background: #E76F51;
+      color: #fff;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    /* 右側：解説カード一覧 */
+    .callouts-container {
+      position: absolute;
+      left: 1040px;
+      top: 260px;
+      width: 790px;
+      height: 650px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .callout-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 22px 28px;
+      box-shadow: 0 10px 30px rgba(15, 37, 64, 0.08);
+      position: relative;
+      border-left: 6px solid #E76F51;
+      height: 180px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .callout-card.ok {
+      border-left-color: #00897B;
+    }
+
+    /* 吹き出しポインター（丸部分） */
+    .callout-card::before {
+      content: '';
+      position: absolute;
+      left: -60px;
+      /* カードとの距離 */
+      top: 50%;
+      transform: translateY(-50%);
+      width: 34px;
+      height: 34px;
+      background: #E76F51;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(231, 111, 81, 0.3);
+      z-index: 20;
+    }
+
+    /* 吹き出しの矢印（右向き三角形：カードをはっきり指す▶） */
+    .callout-card::after {
+      content: '';
+      position: absolute;
+      left: -32px;
+      /* 丸の右側にしっかりと出す */
+      top: 50%;
+      transform: translateY(-50%);
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 14px solid #E76F51;
+      /* くっきりと見える大きめの右向き矢印 */
+      z-index: 21;
+    }
+
+    /* 3つ目の緑カード用 */
+    .callout-card.ok::before {
+      background: #00897B;
+      box-shadow: 0 4px 10px rgba(0, 137, 123, 0.3);
+    }
+
+    .callout-card.ok::after {
+      border-left-color: #00897B;
+    }
+
+    .callout-num {
+      position: absolute;
+      top: -12px;
+      left: 12px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #E76F51;
+      color: #fff;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .callout-card.ok .callout-num {
+      background: #00897B;
+    }
+
+    .callout-h {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0F2540;
+      margin-bottom: 8px;
+      padding-left: 10px;
+    }
+
+    .callout-b {
+      font-size: 17px;
+      color: #2A4060;
+      line-height: 1.55;
+      padding-left: 10px;
+    }
+
+    .callout-b b {
+      color: #E76F51;
+    }
+
+    .callout-card.ok .callout-b b {
+      color: #00897B;
+    }
+
+    /* 下部メッセージバー */
+    .bottom-line {
+      position: absolute;
+      left: 90px;
+      bottom: 45px;
+      width: 1520px;
+      z-index: 10;
+      text-align: center;
+      padding: 16px 24px;
+      background: #0F2540;
+      color: #fff;
+      border-radius: 14px;
+      font-size: 20px;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(15, 37, 64, 0.15);
+    }
+
+    .bottom-line b {
+      color: #FFD479;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slide-container">
+    <!-- ヘッダー -->
+    <div data-object="true" data-object-type="textbox" class="page-header">
+      <div class="page-num">06 — DEFENSE ②</div>
+      <div class="h-title">騙されないための<span style="color:#E76F51;">「違和感」の気づき方</span></div>
+      <div class="h-sub">フィッシングメールは巧妙ですが、3つの「違和感ポイント」を押さえれば大半は防げます</div>
+    </div>
+
+    <!-- 左側：疑似メール画面 -->
+    <div data-object="true" data-object-type="textbox" class="mail-window">
+      <div class="mail-tabs">
+        <div class="mail-tab">受信トレイ</div>
+        <div class="mail-tab inactive">迷惑メール</div>
+        <div class="mail-tab inactive">削除済み</div>
+      </div>
+
+      <div class="mail-subj">【緊急】本日中にご対応いただかない場合、アカウントを停止します</div>
+
+      <div class="mail-header">
+        <div class="mail-from">
+          <div class="mail-avatar">A</div>
+          <div class="mail-from-info">
+            <div class="mail-from-line">
+              <b>"Amazon セキュリティ"</b>
+              <span style="color:#E76F51;font-weight:700;">support@amaz0n-security-verify.com</span>
+            </div>
+            <div class="mail-date">受信 2026/07/27 09:42</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mail-body">
+        <div class="mail-greeting">お客様各位</div>
+        <div class="mail-text">
+          平素よりご利用いただきありがとうございます。<br>
+          <b class="warn">第三者による不正アクセスの兆候を検出</b>いたしました。<br>
+          セキュリティ保護のため、<b class="warn">本日中（24時間以内）</b>に以下より再認証をお願いいたします。<br>
+          ご対応いただけない場合、誠に恐れ入りますがアカウントを停止させていただきます。
+        </div>
+        <div class="mail-cta">≫ アカウント確認はこちら ≪</div>
+      </div>
+    </div>
+
+    <!-- 右側：解説カード（各カードの左手前に右向きポインターを配置） -->
+    <div data-object="true" data-object-type="textbox" class="callouts-container">
+      <div class="callout-card">
+        <div class="callout-num">1</div>
+        <div class="callout-h">送信者アドレスを確認</div>
+        <div class="callout-b">表示名ではなく<b>ドメイン（@以降）</b>を見る。<br><b>amaz0n-security-verify.com</b> は本物ではない。</div>
+      </div>
+
+      <div class="callout-card">
+        <div class="callout-num">2</div>
+        <div class="callout-h">緊急性を煽る文言に注意</div>
+        <div class="callout-b">「<b>本日中／24時間以内</b>」など時間圧をかけるのは典型的な手口。一呼吸おいて検証する。</div>
+      </div>
+
+      <div class="callout-card ok">
+        <div class="callout-num">3</div>
+        <div class="callout-h">リンクを直接クリックしない</div>
+        <div class="callout-b"><b>公式アプリ</b>または<b>ブックマーク</b>からアクセスする習慣を。メール内のURLは触らない。</div>
+      </div>
+    </div>
+
+    <!-- 下部メッセージ -->
+    <div data-object="true" data-object-type="textbox" class="bottom-line">
+      💡 「違和感」を感じたら、<b>クリックせず・返信せず・社内担当者に相談</b>。これが最大の防御です。
+    </div>
+
+    <!-- ページフッター -->
+    <div data-object="true" data-object-type="textbox" class="page-footer">
+      <span class="pf-current">07</span><span class="pf-sep">/</span><span class="pf-total">13</span>
+    </div>
+  </div>
+</body>
+
+</html>

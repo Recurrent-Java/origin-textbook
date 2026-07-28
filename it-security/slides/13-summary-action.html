@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Slide 13 - まとめ・アクションプラン</title>
+  <link rel="stylesheet" href="../assets/chrome.css">
+  <style>
+    .slide-container {
+      background:
+        radial-gradient(circle at 82% 12%, rgba(0, 137, 123, 0.12) 0%, transparent 38%),
+        radial-gradient(circle at 12% 88%, rgba(27, 58, 92, 0.10) 0%, transparent 40%),
+        #FAF7F2;
+    }
+
+    .page-header {
+      position: absolute;
+      left: 90px;
+      top: 60px;
+      width: 1740px;
+      z-index: 10;
+    }
+
+    .page-num {
+      font-size: 14px;
+      letter-spacing: 0.32em;
+      color: #00897B;
+      font-weight: 800;
+      display: inline-block;
+      padding-bottom: 8px;
+      border-bottom: 3px solid #00897B;
+    }
+
+    .h-title {
+      font-size: 54px;
+      font-weight: 900;
+      color: #0F2540;
+      margin-top: 18px;
+      line-height: 1.1;
+    }
+
+    .h-sub {
+      margin-top: 14px;
+      font-size: 22px;
+      font-weight: 600;
+      color: #00897B;
+    }
+
+    .action-grid {
+      position: absolute;
+      left: 90px;
+      top: 300px;
+      width: 1740px;
+      height: 510px;
+      z-index: 10;
+    }
+
+    .action-card {
+      position: absolute;
+      top: 0;
+      width: 540px;
+      height: 510px;
+      border-radius: 24px;
+      padding: 28px 28px;
+      color: #fff;
+      box-shadow: 0 14px 40px rgba(15, 37, 64, 0.15);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .a1 {
+      left: 0;
+      background: linear-gradient(135deg, #00897B 0%, #26A69A 100%);
+    }
+
+    .a2 {
+      left: 600px;
+      background: linear-gradient(135deg, #E76F51 0%, #F4A261 100%);
+    }
+
+    .a3 {
+      left: 1200px;
+      background: linear-gradient(135deg, #1B3A5C 0%, #2A5C8A 100%);
+    }
+
+    .ac-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 52px;
+      flex: none;
+    }
+
+    .ac-label {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.25);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      margin-top: 18px;
+      align-self: flex-start;
+    }
+
+    .ac-h {
+      font-size: 32px;
+      font-weight: 900;
+      margin-top: 14px;
+      line-height: 1.3;
+    }
+
+    .ac-divider {
+      width: 50px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 2px;
+      margin-top: 14px;
+    }
+
+    .ac-list {
+      margin-top: 18px;
+      font-size: 18px;
+      line-height: 1.55;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .ac-list li {
+      margin-bottom: 8px;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .ac-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      font-weight: 900;
+    }
+
+    .checklist-card {
+      position: absolute;
+      left: 90px;
+      top: 830px;
+      width: 1740px;
+      height: 200px;
+      z-index: 10;
+      background: #fff;
+      border-radius: 18px;
+      padding: 24px 32px;
+      box-shadow: 0 8px 24px rgba(15, 37, 64, 0.10);
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .cls-left {
+      flex: none;
+    }
+
+    .cls-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #00897B, #1B3A5C);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      color: #fff;
+    }
+
+    .cls-body {
+      flex: 1;
+    }
+
+    .cls-h {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F2540;
+      margin-bottom: 6px;
+    }
+
+    .cls-b {
+      font-size: 18px;
+      color: #2A4060;
+      line-height: 1.55;
+    }
+
+    .cls-b b {
+      color: #00897B;
+      font-weight: 800;
+    }
+
+    .cls-time {
+      background: #0F2540;
+      color: #FFD479;
+      padding: 16px 24px;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    .cls-time b {
+      font-size: 28px;
+      display: block;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slide-container">
+    <div data-object="true" data-object-type="textbox" class="page-header">
+      <div class="page-num">12 — SUMMARY</div>
+      <div class="h-title">本日のまとめ：安全で快適な<span style="color:#00897B;">デジタルライフのために</span></div>
+      <div class="h-sub">3つのアクションを、明日から自分の業務の中に組み込みましょう</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" class="action-grid">
+      <div class="action-card a1">
+        <div class="ac-icon">🔐</div>
+        <div class="ac-label">SECURITY</div>
+        <div class="ac-h">アカウントを鉄壁に守る</div>
+        <div class="ac-divider"></div>
+        <ul class="ac-list">
+          <li>複雑なパスワードを設定</li>
+          <li>2段階認証を必ず有効化</li>
+          <li>定期的にPWを見直して更新</li>
+        </ul>
+      </div>
+
+      <div class="action-card a2">
+        <div class="ac-icon">🧠</div>
+        <div class="ac-label">MORAL</div>
+        <div class="ac-h">一旦立ち止まって考える習慣</div>
+        <div class="ac-divider"></div>
+        <ul class="ac-list">
+          <li>投稿前に「未来の自分」が読めるか</li>
+          <li>個人情報・著作物の扱いに一手間</li>
+          <li>違和感があれば立ち止まる勇気</li>
+        </ul>
+      </div>
+
+      <div class="action-card a3">
+        <div class="ac-icon">📞</div>
+        <div class="ac-label">EMERGENCY</div>
+        <div class="ac-h">一人で抱え込まず<br>すぐ報告・相談</div>
+        <div class="ac-divider"></div>
+        <ul class="ac-list">
+          <li>落ち着く → 切断 → 報告</li>
+          <li>社内窓口・専門家の早期活用</li>
+          <li>隠さず、正直に、速やかに</li>
+        </ul>
+      </div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" class="checklist-card">
+      <div class="cls-left">
+        <div class="cls-icon">✓</div>
+      </div>
+      <div class="cls-body">
+        <div class="cls-h">🎯 帰り道のチェック：今日から始められる3分アクション</div>
+        <div class="cls-b">
+          <b>① 重要アカウントのパスワード強度を確認 → 強ければ 2段階認証を有効化</b><br>
+          ② 普段使いのSNSの「過去の投稿」を1件だけ見直し、不要なら削除 or 非公開設定<br>
+          ③ 社内セキュリティ窓口・相談先の連絡先をスマホに保存しておく
+        </div>
+      </div>
+      <div class="cls-time">
+        所要時間<br><b>3 min</b>
+      </div>
+    </div>
+
+    <!-- Page footer -->
+    <div data-object="true" data-object-type="textbox" class="page-footer">
+      <span class="pf-current">13</span><span class="pf-sep">/</span><span class="pf-total">13</span>
+    </div>
+  </div>
+</body>
+
+</html>

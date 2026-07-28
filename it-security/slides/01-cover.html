@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Slide 1 - 表紙</title>
+  <link rel="stylesheet" href="../assets/chrome.css">
+  <style>
+    body {
+      background: #FAF7F2;
+    }
+
+    .slide-container {
+      background:
+        radial-gradient(circle at 85% 18%, rgba(0, 137, 123, 0.10) 0%, transparent 45%),
+        radial-gradient(circle at 12% 90%, rgba(231, 111, 81, 0.08) 0%, transparent 40%),
+        #FAF7F2;
+    }
+
+    .hero-bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      z-index: 1;
+      background:
+        linear-gradient(120deg, rgba(15, 37, 64, 0.95) 0%, rgba(27, 58, 92, 0.85) 50%, rgba(42, 92, 138, 0.75) 100%);
+      clip-path: polygon(0 0, 70% 0, 55% 100%, 0 100%);
+    }
+
+    .deco-circle {
+      position: absolute;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    .c1 {
+      left: 1180px;
+      top: 100px;
+      width: 360px;
+      height: 360px;
+      background: rgba(0, 137, 123, 0.18);
+    }
+
+    .c2 {
+      left: 1480px;
+      top: 380px;
+      width: 220px;
+      height: 220px;
+      background: rgba(231, 111, 81, 0.18);
+    }
+
+    .c3 {
+      left: 1320px;
+      top: 720px;
+      width: 160px;
+      height: 160px;
+      background: rgba(255, 255, 255, 0.10);
+    }
+
+    .eyebrow {
+      position: absolute;
+      left: 90px;
+      top: 90px;
+      z-index: 5;
+      color: #FFD479;
+      font-size: 20px;
+      letter-spacing: 0.32em;
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: '';
+      position: absolute;
+      left: -50px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 2px;
+      background: #FFD479;
+    }
+
+    .title {
+      position: absolute;
+      left: 90px;
+      top: 160px;
+      width: 1200px;
+      z-index: 5;
+      color: #fff;
+    }
+
+    .title .small {
+      display: block;
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 18px;
+      background: linear-gradient(90deg, #00897B, #4DB6AC);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .title .big {
+      display: block;
+      font-size: 88px;
+      font-weight: 900;
+      line-height: 1.05;
+      text-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .subtitle {
+      position: absolute;
+      left: 90px;
+      top: 520px;
+      width: 1100px;
+      z-index: 5;
+      color: #E8F1F8;
+      font-size: 28px;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    .meta-row {
+      position: absolute;
+      left: 90px;
+      bottom: 80px;
+      z-index: 5;
+      display: flex;
+      gap: 60px;
+      color: #fff;
+    }
+
+    .meta-item .label {
+      font-size: 14px;
+      opacity: 0.6;
+      letter-spacing: 0.2em;
+    }
+
+    .meta-item .value {
+      font-size: 24px;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .icons {
+      position: absolute;
+      right: 120px;
+      top: 300px;
+      z-index: 6;
+      width: 560px;
+      height: 560px;
+    }
+
+    .lock-card,
+    .heart-card {
+      position: absolute;
+      border-radius: 32px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .lock-card {
+      left: 0;
+      top: 0;
+      width: 280px;
+      height: 280px;
+      background: linear-gradient(135deg, #00897B 0%, #26A69A 100%);
+      transform: rotate(-6deg);
+    }
+
+    .heart-card {
+      right: 0;
+      bottom: 0;
+      width: 260px;
+      height: 260px;
+      background: linear-gradient(135deg, #E76F51 0%, #F4A261 100%);
+      transform: rotate(8deg);
+    }
+
+    .lock-svg,
+    .heart-svg {
+      width: 60%;
+      height: 60%;
+    }
+
+    .handshake-card {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(-2deg);
+      width: 300px;
+      height: 140px;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      font-size: 24px;
+      font-weight: 800;
+      color: #1B3A5C;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slide-container">
+    <!-- Background panel -->
+    <div data-object="true" data-object-type="shape" class="hero-bg"></div>
+    <div data-object="true" data-object-type="shape" class="deco-circle c1"></div>
+    <div data-object="true" data-object-type="shape" class="deco-circle c2"></div>
+    <div data-object="true" data-object-type="shape" class="deco-circle c3"></div>
+
+    <!-- Eyebrow -->
+    <div data-object="true" data-object-type="textbox" class="eyebrow">SEMINAR 2026</div>
+
+    <!-- Title block -->
+    <div data-object="true" data-object-type="textbox" class="title">
+      <span class="small"></span>
+      <span class="big">情報セキュリティ ＆<br>情報モラル入門</span>
+    </div>
+
+    <!-- Subtitle -->
+    <div data-object="true" data-object-type="textbox" class="subtitle">
+      IT初心者でも安心！自分と組織を守る<br>
+      デジタル時代のルールとマナー
+    </div>
+
+    <!-- Right-side visual: lock + handshake + heart -->
+    <div data-object="true" data-object-type="icon" class="icons">
+      <div class="lock-card">
+        <svg class="lock-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="22" y="46" width="56" height="40" rx="6" fill="#fff" />
+          <path d="M32 46 V32 a18 18 0 0 1 36 0 V46" stroke="#fff" stroke-width="6" fill="none"
+            stroke-linecap="round" />
+          <circle cx="50" cy="66" r="5" fill="#00897B" />
+          <rect x="48" y="66" width="4" height="10" fill="#00897B" />
+        </svg>
+      </div>
+      <div class="heart-card">
+        <svg class="heart-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 86 C16 64 8 38 24 26 C36 17 46 24 50 32 C54 24 64 17 76 26 C92 38 84 64 50 86 Z" fill="#fff" />
+        </svg>
+      </div>
+      <div class="handshake-card">
+        <span style="font-size:48px;">🤝</span>
+        <span>信頼 × 安心</span>
+      </div>
+    </div>
+
+    <!-- Meta presenter info -->
+    <div data-object="true" data-object-type="textbox" class="meta-row">
+      <div class="meta-item">
+        <div class="label">PRESENTER</div>
+        <div class="value">今澤</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">DATE</div>
+        <div class="value">2026.07.28</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">VENUE</div>
+        <div class="value">創造社リカレントスクール福岡校</div>
+      </div>
+    </div>
+
+    <!-- Page footer -->
+    <div data-object="true" data-object-type="textbox" class="page-footer">
+      <span class="pf-current">01</span><span class="pf-sep">/</span><span class="pf-total">13</span>
+    </div>
+  </div>
+</body>
+
+</html>

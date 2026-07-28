@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Slide 9 - SNS・著作権</title>
+  <link rel="stylesheet" href="../assets/chrome.css">
+  <style>
+    .slide-container {
+      background:
+        radial-gradient(circle at 78% 18%, rgba(231, 111, 81, 0.10) 0%, transparent 40%),
+        radial-gradient(circle at 18% 80%, rgba(0, 137, 123, 0.10) 0%, transparent 40%),
+        #FAF7F2;
+    }
+
+    .page-header {
+      position: absolute;
+      left: 90px;
+      top: 60px;
+      z-index: 10;
+    }
+
+    .page-num {
+      font-size: 14px;
+      letter-spacing: 0.32em;
+      color: #00897B;
+      font-weight: 700;
+      display: inline-block;
+      padding-bottom: 8px;
+      border-bottom: 3px solid #00897B;
+    }
+
+    .h-title {
+      font-size: 54px;
+      font-weight: 900;
+      color: #0F2540;
+      margin-top: 18px;
+      line-height: 1.1;
+    }
+
+    .golden-rule {
+      position: absolute;
+      left: 90px;
+      top: 280px;
+      width: 1740px;
+      z-index: 10;
+      background: linear-gradient(135deg, #0F2540 0%, #1B3A5C 100%);
+      color: #fff;
+      padding: 22px 36px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      box-shadow: 0 12px 40px rgba(15, 37, 64, 0.20);
+    }
+
+    .gr-tag {
+      background: #FFD479;
+      color: #0F2540;
+      padding: 8px 14px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+    }
+
+    .gr-text {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .gr-text b {
+      color: #FFD479;
+    }
+
+    .rule-grid {
+      position: absolute;
+      left: 90px;
+      top: 480px;
+      width: 1740px;
+      height: 520px;
+      z-index: 10;
+    }
+
+    .rule-card {
+      position: absolute;
+      top: 0;
+      width: 540px;
+      height: 520px;
+      background: #fff;
+      border-radius: 22px;
+      padding: 30px 32px;
+      box-shadow: 0 10px 30px rgba(15, 37, 64, 0.08);
+      border-top: 8px solid;
+    }
+
+    .r1 {
+      left: 0;
+      border-top-color: #00897B;
+    }
+
+    .r2 {
+      left: 600px;
+      border-top-color: #E76F51;
+    }
+
+    .r3 {
+      left: 1200px;
+      border-top-color: #1B3A5C;
+    }
+
+    .rule-emoji {
+      width: 80px;
+      height: 80px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+    }
+
+    .r1 .rule-emoji {
+      background: rgba(0, 137, 123, 0.15);
+    }
+
+    .r2 .rule-emoji {
+      background: rgba(231, 111, 81, 0.15);
+    }
+
+    .r3 .rule-emoji {
+      background: rgba(27, 58, 92, 0.15);
+    }
+
+    .rule-num {
+      position: absolute;
+      top: 24px;
+      right: 30px;
+      font-size: 140px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .r1 .rule-num {
+      color: rgba(0, 137, 123, 0.18);
+    }
+
+    .r2 .rule-num {
+      color: rgba(231, 111, 81, 0.18);
+    }
+
+    .r3 .rule-num {
+      color: rgba(27, 58, 92, 0.18);
+    }
+
+    .rule-h {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F2540;
+      margin-top: 18px;
+    }
+
+    .rule-h-jp {
+      font-size: 14px;
+      color: #6B7B8C;
+      letter-spacing: 0.18em;
+      margin-top: 4px;
+      font-weight: 600;
+    }
+
+    .rule-b {
+      font-size: 18px;
+      color: #2A4060;
+      line-height: 1.6;
+      margin-top: 14px;
+    }
+
+    .rule-b b {
+      color: #0F2540;
+      font-weight: 800;
+    }
+
+    .check-list {
+      margin-top: 14px;
+      padding: 12px 16px;
+      background: #FAF7F2;
+      border-radius: 12px;
+      font-size: 15px;
+      color: #1B3A5C;
+      line-height: 1.55;
+    }
+
+    .check-list div {
+      margin-bottom: 4px;
+    }
+
+    .check-list div::before {
+      content: '✓';
+      display: inline-block;
+      width: 18px;
+      color: #00897B;
+      font-weight: 900;
+    }
+
+    .r2 .check-list div::before {
+      color: #E76F51;
+      content: '✕';
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slide-container">
+    <div data-object="true" data-object-type="textbox" class="page-header">
+      <div class="page-num">08 — SNS MORAL ①</div>
+      <div class="h-title">SNSトラブルを防ぐ<span style="color:#E76F51;">3つの黄金ルール</span></div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" class="golden-rule">
+      <div class="gr-tag">⚠ GOLDEN RULE</div>
+      <div class="gr-text">一度ウェブに公開した情報は、<b>原則として消せない</b>。<br>投稿前に「未来の自分が読んで気持ちいいか？」と一度問い直す。</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" class="rule-grid">
+      <div class="rule-card r1">
+        <div class="rule-num">01</div>
+        <div class="rule-emoji">📵</div>
+        <div class="rule-h">個人情報の映り込みに注意</div>
+        <div class="rule-h-jp">PROTECT YOUR DATA</div>
+        <div class="rule-b">位置情報、背景の建物、<b>社員証や書類の写り込み</b>、ノートPCの画面にも注意。撮影時は四隅まで確認。</div>
+        <div class="check-list">
+          <div>位置情報タグはOFF</div>
+          <div>背景にホワイトボード情報は映さない</div>
+          <div>書類の文字が読める解像度は危険</div>
+        </div>
+      </div>
+
+      <div class="rule-card r2">
+        <div class="rule-num">02</div>
+        <div class="rule-emoji">⏳</div>
+        <div class="rule-h">一度公開した情報は消えない</div>
+        <div class="rule-h-jp">DIGITAL TATTOO</div>
+        <div class="rule-b">"<b>デジタルタトゥー</b>"：スクリーンショットと転載で拡散し続け、削除依頼しても完全消去はほぼ不可能。</div>
+        <div class="check-list">
+          <div>後悔した発言でもスクショ保存される</div>
+          <div>過去投稿の発掘リスク（就職・転職時）</div>
+          <div>法律違反は投稿後も責任が残る</div>
+        </div>
+      </div>
+
+      <div class="rule-card r3">
+        <div class="rule-num">03</div>
+        <div class="rule-emoji">©️</div>
+        <div class="rule-h">著作権・肖像権を尊重する</div>
+        <div class="rule-h-jp">RESPECT RIGHTS</div>
+        <div class="rule-b">他人の画像・文章・音楽を<b>勝手に転載しない</b>。顔が映っている写真は本人許可が原則必要です。</div>
+        <div class="check-list">
+          <div>引用元を明記しても許諾無くはNG</div>
+          <div>肖像権：私的使用でも要確認</div>
+          <div>生成AI画像も権利確認へ利用</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page footer -->
+    <div data-object="true" data-object-type="textbox" class="page-footer">
+      <span class="pf-current">09</span><span class="pf-sep">/</span><span class="pf-total">13</span>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Slide 11 - ワークショップ</title>
+  <link rel="stylesheet" href="../assets/chrome.css">
+  <style>
+    .slide-container {
+      background: #FAF7F2;
+    }
+
+    .page-header {
+      position: absolute;
+      left: 90px;
+      top: 60px;
+      z-index: 10;
+    }
+
+    .page-num {
+      font-size: 14px;
+      letter-spacing: 0.32em;
+      color: #00897B;
+      font-weight: 700;
+      display: inline-block;
+      padding-bottom: 8px;
+      border-bottom: 3px solid #00897B;
+    }
+
+    .h-title {
+      font-size: 54px;
+      font-weight: 900;
+      color: #0F2540;
+      margin-top: 18px;
+      line-height: 1.1;
+    }
+
+    .h-sub {
+      margin-top: 14px;
+      font-size: 22px;
+      color: #6B7B8C;
+    }
+
+    .workshop-banner {
+      position: absolute;
+      left: 90px;
+      top: 280px;
+      width: 1740px;
+      z-index: 10;
+      background: linear-gradient(135deg, #00897B 0%, #26A69A 50%, #4DB6AC 100%);
+      color: #fff;
+      padding: 24px 36px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      box-shadow: 0 12px 40px rgba(0, 137, 123, 0.25);
+    }
+
+    .wb-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      flex: none;
+    }
+
+    .wb-body {
+      flex: 1;
+    }
+
+    .wb-h {
+      font-size: 26px;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .wb-b {
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .wb-b b {
+      background: rgba(255, 212, 121, 0.3);
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .case-grid {
+      position: absolute;
+      left: 90px;
+      top: 480px;
+      width: 1740px;
+      height: 540px;
+      z-index: 10;
+    }
+
+    .case-card {
+      position: absolute;
+      top: 0;
+      width: 540px;
+      height: 540px;
+      background: #fff;
+      border-radius: 22px;
+      padding: 0;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(15, 37, 64, 0.10);
+    }
+
+    .c1 {
+      left: 0;
+    }
+
+    .c2 {
+      left: 600px;
+    }
+
+    .c3 {
+      left: 1200px;
+    }
+
+    .case-top {
+      padding: 22px 28px;
+    }
+
+    .c1 .case-top {
+      background: linear-gradient(135deg, #00897B, #26A69A);
+      color: #fff;
+    }
+
+    .c2 .case-top {
+      background: linear-gradient(135deg, #E76F51, #F4A261);
+      color: #fff;
+    }
+
+    .c3 .case-top {
+      background: linear-gradient(135deg, #1B3A5C, #2A5C8A);
+      color: #fff;
+    }
+
+    .case-num {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.25);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+    }
+
+    .case-h {
+      font-size: 22px;
+      font-weight: 800;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+
+    .case-body {
+      padding: 24px 28px;
+    }
+
+    .scenario-bubble {
+      position: relative;
+      padding: 20px;
+      background: #FAF7F2;
+      border-radius: 14px;
+      font-size: 16px;
+      color: #0F2540;
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .scenario-bubble::before {
+      content: '💬';
+      position: absolute;
+      top: -10px;
+      left: 14px;
+      background: #fff;
+      padding: 2px 6px;
+      border-radius: 8px;
+      font-size: 18px;
+    }
+
+    .scenario-req {
+      font-size: 14px;
+      color: #E76F51;
+      font-weight: 700;
+      padding: 10px 14px;
+      background: rgba(231, 111, 81, 0.10);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .case-foot {
+      padding: 14px 28px;
+      background: #0F2540;
+      color: #FFD479;
+      font-size: 15px;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slide-container">
+    <div data-object="true" data-object-type="textbox" class="page-header">
+      <div class="page-num">10 — WORKSHOP</div>
+      <div class="h-title">実践ワーク：「<span style="color:#00897B;">あなたならどうする？</span>」事例検討</div>
+      <div class="h-sub">3つのケースをグループで5分ずつ議論 → 全体で発表</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" class="workshop-banner">
+      <div class="wb-icon">🗣️</div>
+      <div class="wb-body">
+        <div class="wb-h">グループディスカッション</div>
+        <div class="wb-b">各5分 × 3ケース。<b>正解を出すより「なぜそう思うか」</b>を言語化するのが目的。<br>似た経験談・社内ルールがあれば併せて共有してください。</div>
+      </div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" class="case-grid">
+      <div class="case-card c1">
+        <div class="case-top">
+          <div class="case-num">CASE 01 — アカウント</div>
+          <div class="case-h">同僚から「パスワード忘れたから貸して」</div>
+        </div>
+        <div class="case-body">
+          <div class="scenario-bubble">
+            部長の代理でメール送信を頼まれ、「今すぐ必要」と急かされた。<br>パスワードを社内で共有するのは本当に問題ない？
+          </div>
+          <div class="scenario-req">🎯 論点：共有の可否／信頼関係／代替手段</div>
+        </div>
+        <div class="case-foot">5分ディスカッション → 発表</div>
+      </div>
+
+      <div class="case-card c2">
+        <div class="case-top">
+          <div class="case-num">CASE 02 — 公衆Wi-Fi</div>
+          <div class="case-h">街中の無料Wi-Fiで会社の重要メール返信</div>
+        </div>
+        <div class="case-body">
+          <div class="scenario-bubble">
+            ホテルのロビーで重要な顧客向けメールを返信。<br>VPN を使えば「安全」と言われたが、本当だろうか？<br>周囲の覗き見リスクは？
+          </div>
+          <div class="scenario-req">🎯 論点：盗聴／覗き見／VPN の限界</div>
+        </div>
+        <div class="case-foot">5分ディスカッション → 発表</div>
+      </div>
+
+      <div class="case-card c3">
+        <div class="case-top">
+          <div class="case-num">CASE 03 — SNS投稿</div>
+          <div class="case-h">バズ画像に自分が映り込んだ写真を添えて投稿</div>
+        </div>
+        <div class="case-body">
+          <div class="scenario-bubble">
+            自分の晴れ舞台の写真を「こんなに評価された！」と<br>公開したい。<br>著作権・肖像権・本人や組織の同意・薬品事情への影響は？ </div>
+          <div class="scenario-req">🎯 論点：肖像権／炎上／事後対応の限界</div>
+        </div>
+        <div class="case-foot">5分ディスカッション → 発表</div>
+      </div>
+    </div>
+
+    <!-- Page footer -->
+    <div data-object="true" data-object-type="textbox" class="page-footer">
+      <span class="pf-current">11</span><span class="pf-sep">/</span><span class="pf-total">13</span>
+    </div>
+  </div>
+</body>
+
+</html>

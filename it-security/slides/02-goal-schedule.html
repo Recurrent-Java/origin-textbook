@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Slide 2 - ゴールとスケジュール</title>
+  <link rel="stylesheet" href="../assets/chrome.css">
+  <style>
+    .slide-container {
+      background: #FAF7F2;
+    }
+
+    .page-header {
+      position: absolute;
+      left: 90px;
+      top: 60px;
+      z-index: 10;
+    }
+
+    .page-num {
+      font-size: 14px;
+      letter-spacing: 0.32em;
+      color: #00897B;
+      font-weight: 700;
+      display: inline-block;
+      padding-bottom: 8px;
+      border-bottom: 3px solid #00897B;
+    }
+
+    .h-title {
+      font-size: 54px;
+      font-weight: 900;
+      color: #0F2540;
+      margin-top: 18px;
+      line-height: 1.1;
+    }
+
+    .h-sub {
+      margin-top: 14px;
+      font-size: 22px;
+      color: #6B7B8C;
+    }
+
+    .goal-card {
+      position: absolute;
+      left: 90px;
+      top: 280px;
+      width: 900px;
+      height: 130px;
+      z-index: 10;
+      background: linear-gradient(135deg, #1B3A5C 0%, #2A5C8A 100%);
+      border-radius: 20px;
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      box-shadow: 0 12px 40px rgba(15, 37, 64, 0.18);
+    }
+
+    .goal-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(255, 212, 121, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      flex: none;
+    }
+
+    .goal-label {
+      font-size: 14px;
+      color: #FFD479;
+      letter-spacing: 0.25em;
+      font-weight: 700;
+    }
+
+    .goal-body {
+      font-size: 22px;
+      color: #fff;
+      line-height: 1.5;
+      margin-top: 6px;
+      font-weight: 600;
+    }
+
+    .timeline-wrap {
+      position: absolute;
+      left: 90px;
+      top: 460px;
+      width: 1740px;
+      height: 520px;
+      z-index: 10;
+    }
+
+    .timeline-rail {
+      position: absolute;
+      left: 0;
+      top: 240px;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, #00897B 0%, #E76F51 50%, #1B3A5C 100%);
+      border-radius: 3px;
+    }
+
+    .time-card {
+      position: absolute;
+      top: 0;
+      width: 520px;
+      height: 380px;
+      border-radius: 24px;
+      padding: 30px;
+      background: #fff;
+      box-shadow: 0 12px 36px rgba(15, 37, 64, 0.08);
+      border-top: 6px solid;
+    }
+
+    .tc1 {
+      left: 0;
+      border-top-color: #00897B;
+    }
+
+    .tc2 {
+      left: 610px;
+      border-top-color: #E76F51;
+    }
+
+    .tc3 {
+      left: 1220px;
+      border-top-color: #1B3A5C;
+    }
+
+    .time-badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+
+    .tc1 .time-badge {
+      background: rgba(0, 137, 123, 0.12);
+      color: #00897B;
+    }
+
+    .tc2 .time-badge {
+      background: rgba(231, 111, 81, 0.12);
+      color: #E76F51;
+    }
+
+    .tc3 .time-badge {
+      background: rgba(27, 58, 92, 0.12);
+      color: #1B3A5C;
+    }
+
+    .time-ptitle {
+      font-size: 30px;
+      font-weight: 800;
+      color: #0F2540;
+      margin: 18px 0 14px;
+    }
+
+    .time-body {
+      font-size: 20px;
+      color: #2A4060;
+      line-height: 1.55;
+    }
+
+    .time-body li {
+      margin-bottom: 8px;
+    }
+
+    .connector {
+      position: absolute;
+      top: 380px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      z-index: 2;
+    }
+
+    .tc1+.rail-marker,
+    .tc2+.rail-marker,
+    .tc3+.rail-marker {
+      display: none;
+    }
+
+    .cc1 {
+      left: 260px;
+      background: #00897B;
+      color: #fff;
+    }
+
+    .cc2 {
+      left: 870px;
+      background: #E76F51;
+      color: #fff;
+    }
+
+    .cc3 {
+      left: 1480px;
+      background: #1B3A5C;
+      color: #fff;
+    }
+
+    .cc-label {
+      position: absolute;
+      top: 430px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #0F2540;
+      text-align: center;
+      width: 160px;
+    }
+
+    .cl1 {
+      left: 180px;
+      color: #00897B;
+    }
+
+    .cl2 {
+      left: 790px;
+      color: #E76F51;
+    }
+
+    .cl3 {
+      left: 1400px;
+      color: #1B3A5C;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slide-container">
+    <div data-object="true" data-object-type="textbox" class="page-header">
+      <div class="page-num">01 — OVERVIEW</div>
+      <div class="h-title">概要</div>
+      <div class="h-sub">デジタル時代の必須スキルを体系的に学びます</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" class="goal-card">
+      <div class="goal-icon">🎯</div>
+      <div>
+        <div class="goal-label">TODAY'S GOAL</div>
+        <div class="goal-body">日常のIT利用に潜むリスクを理解し、<br>正しく安全に情報を取り扱えるようになる。</div>
+      </div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" class="timeline-wrap">
+      <div class="timeline-rail"></div>
+
+      <div class="time-card tc1">
+        <div class="time-badge">PART 1</div>
+        <div class="time-ptitle">情報セキュリティの<br>基礎と具体的対策</div>
+        <ul class="time-body" style="padding-left:20px; margin:0;">
+          <li>情報セキュリティの3要素（CIA）</li>
+          <li>代表的なサイバー攻撃の手口</li>
+          <li>パスワード管理・2段階認証</li>
+        </ul>
+      </div>
+
+      <div class="time-card tc2">
+        <div class="time-badge">PART 2</div>
+        <div class="time-ptitle">情報モラルと<br>SNS・著作権の注意点</div>
+        <ul class="time-body" style="padding-left:20px; margin:0;">
+          <li>セキュリティ vs モラルの違い</li>
+          <li>SNSトラブルを防ぐ黄金ルール</li>
+          <li>組織での情報取り扱いルール</li>
+        </ul>
+      </div>
+
+      <div class="time-card tc3">
+        <div class="time-badge">PART 3</div>
+        <div class="time-ptitle">実践ワークショップ と<br>万が一の対処法</div>
+        <ul class="time-body" style="padding-left:20px; margin:0;">
+          <li>ケーススタディ・グループ討議</li>
+          <li>トラブル発生時の初動対応</li>
+          <li>明日から実践するアクション</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Page footer -->
+    <div data-object="true" data-object-type="textbox" class="page-footer">
+      <span class="pf-current">02</span><span class="pf-sep">/</span><span class="pf-total">13</span>
+    </div>
+  </div>
+</body>
+
+</html>
