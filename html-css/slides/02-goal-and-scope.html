@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>なぜ HTML/CSS の学習範囲を絞るのか？</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; padding:0; overflow:hidden; background:#F4F1E8; font-family:'Noto Sans JP','Inter',sans-serif; color:#2E2D29; }
+  .mono { font-family:'JetBrains Mono', monospace; }
+  .serif { font-family:'Noto Serif JP', serif; }
+</style>
+</head>
+<body data-screen-label="02 学習ゴールと絞り込みの理由">
+  <div class="slide-container" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#F4F1E8;">
+
+    <!-- Top header -->
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:64px; width:1400px; z-index:10;">
+      <div class="mono" style="font-size:18px; letter-spacing:0.2em; color:#1B5E3F;">02 &nbsp;・&nbsp; ゴール &amp; スコープ &nbsp;・&nbsp; なぜ今日 "これだけ" だけやるのか？</div>
+    </div>
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:108px; width:1760px; height:4px; background:#1B5E3F; z-index:1;"></div>
+
+    <!-- Head title -->
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1760px; z-index:10;">
+      <div class="serif" style="font-size:50px; line-height:1.25; color:#2E2D29; font-weight:700; letter-spacing:-0.02em;">なぜ HTML/CSS の学習範囲を<span style="color:#1B5E3F;">絞る</span>のか？</div>
+    </div>
+
+    <!-- ===== Left card: 課題 ===== -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:240px; width:860px; height:720px; background:#FFFFFF; border:1px solid #D6D2C4; z-index:1;"></div>
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:240px; width:860px; height:64px; background:#EFEAE0; z-index:2;"></div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:258px; width:800px; z-index:10;">
+      <div class="mono" style="font-size:16px; letter-spacing:0.1em; color:#2E2D29; opacity:0.6;">LEFT &nbsp;・&nbsp; 現実</div>
+    </div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:330px; width:800px; z-index:10;">
+      <div class="serif" style="font-size:42px; line-height:1.25; color:#2E2D29; font-weight:700;">HTML/CSS は範囲が <span style="color:#B04830;">広すぎる</span>。</div>
+      <div style="font-size:20px; line-height:1.6; color:#2E2D29; opacity:0.78; margin-top:14px;">全部を覚えて全部を使おうとすると、<br>最初の 1 画面で迷子になります。</div>
+    </div>
+
+    <!-- Chaos cloud illustration (text labels in dense jumble) -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:500px; width:780px; height:420px; background:#FAF7EE; border:1px dashed #C9C2B1; z-index:1;"></div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:520px; width:780px; z-index:10;">
+      <div class="mono" style="font-size:14px; letter-spacing:0.1em; color:#B04830; opacity:0.7;">全部覚えようとして…</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:560px; width:760px; z-index:10;">
+      <div style="font-size:18px; line-height:1.8; color:#2E2D29;">
+        <span class="mono" style="font-size:17px; color:#2E2D29; opacity:0.5;">&lt;canvas&gt;</span>
+        &nbsp;
+        <span class="mono" style="font-size:17px; color:#2E2D29; opacity:0.5;">&lt;video&gt;</span>
+        &nbsp;
+        <span class="mono" style="font-size:17px; color:#2E2D29; opacity:0.5;">grid-template-areas</span>
+        &nbsp;
+        <span class="mono" style="font-size:17px; color:#2E2D29; opacity:0.5;">@keyframes</span>
+        &nbsp;
+        <span class="mono" style="font-size:17px; color:#2E2D29; opacity:0.5;">transform: rotate3d</span>
+        &nbsp;
+        <span class="mono" style="font-size:17px; color:#2E2D29; opacity:0.5;">backdrop-filter</span>
+        &nbsp;
+        <span class="mono" style="font-size:17px; color:#2E2D29; opacity:0.5;">CSS変数</span>
+        &nbsp;
+        <span class="mono" style="font-size:17px; color:#2E2D29; opacity:0.5;">擬似要素</span>
+        &nbsp;
+        <span class="mono" style="font-size:17px; color:#2E2D29; opacity:0.5;">animation-delay</span>
+        &nbsp;
+        <span class="mono" style="font-size:17px; color:#2E2D29; opacity:0.5;">SVG</span>
+        &nbsp;
+        <span class="mono" style="font-size:17px; color:#2E2D29; opacity:0.5;">position: sticky</span>
+      </div>
+    </div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:780px; width:760px; z-index:10;">
+      <div style="font-size:18px; line-height:1.8; color:#2E2D29;">
+        <span class="mono" style="font-size:17px; color:#2E2D29; opacity:0.5;">scroll-snap</span>
+        &nbsp;
+        <span class="mono" style="font-size:17px; color:#2E2D29; opacity:0.5;">Flex vs Grid</span>
+        &nbsp;
+        <span class="mono" style="font-size:17px; color:#2E2D29; opacity:0.5;">accessibility</span>
+        &nbsp;
+        <span class="mono" style="font-size:17px; color:#2E2D29; opacity:0.5;">:has()</span>
+        &nbsp;
+        <span class="mono" style="font-size:17px; color:#2E2D29; opacity:0.5;">@media</span>
+        &nbsp;
+        <span class="mono" style="font-size:17px; color:#2E2D29; opacity:0.5;">vw / vh</span>
+        &nbsp;
+        <span class="mono" style="font-size:17px; color:#2E2D29; opacity:0.5;">aspect-ratio</span>
+        &nbsp;
+        <span class="mono" style="font-size:17px; color:#2E2D29; opacity:0.5;">clamp()</span>
+        &nbsp;
+        <span class="mono" style="font-size:17px; color:#2E2D29; opacity:0.5;">will-change</span>
+      </div>
+    </div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:860px; width:760px; text-align:center; z-index:10;">
+      <div class="mono" style="font-size:18px; color:#B04830; opacity:0.95;">→ どこから手をつける？迷子 / 学生あるある</div>
+    </div>
+
+    <!-- ===== Right card: 戦略 ===== -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:240px; width:860px; height:720px; background:#FFFFFF; border:1px solid #D6D2C4; z-index:1;"></div>
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:240px; width:860px; height:64px; background:#E0EBE5; z-index:2;"></div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:1000px; top:258px; width:800px; z-index:10;">
+      <div class="mono" style="font-size:16px; letter-spacing:0.1em; color:#1B5E3F;">RIGHT &nbsp;・&nbsp; 解答</div>
+    </div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:1000px; top:330px; width:800px; z-index:10;">
+      <div class="serif" style="font-size:42px; line-height:1.25; color:#2E2D29; font-weight:700;">“データ入出力” に<br><span style="color:#1B5E3F;">直結する要素</span>だけ覚える。</div>
+      <div style="font-size:20px; line-height:1.6; color:#2E2D29; opacity:0.78; margin-top:14px;">Spring Boot とデータのやり取りをする<br>"絶対必要 8 割" に集中。</div>
+    </div>
+
+    <!-- Straight line essentials list -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:1020px; top:520px; width:780px; height:380px; background:#FAF7EE; border:1px solid #C9D8C9; z-index:1;"></div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:1040px; top:540px; width:760px; z-index:10;">
+      <div class="mono" style="font-size:14px; letter-spacing:0.1em; color:#1B5E3F;">TODAY'S CHECKLIST</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:1040px; top:580px; width:760px; z-index:10;">
+      <div style="font-size:22px; line-height:1.65; color:#2E2D29;">
+        <div style="padding:8px 0;"><span style="color:#1B5E3F; font-weight:700;">01.</span> &nbsp;<span class="mono" style="font-size:21px;">&lt;form&gt; &nbsp; / &nbsp; &lt;input&gt; &nbsp; / &nbsp; &lt;select&gt; &nbsp; / &nbsp; &lt;textarea&gt;</span></div>
+        <div style="padding:8px 0;"><span style="color:#1B5E3F; font-weight:700;">02.</span> &nbsp;<span class="mono" style="font-size:21px;">&lt;table&gt; &nbsp; / &nbsp; &lt;ul&gt; &nbsp; / &nbsp; &lt;a&gt; &nbsp; / &nbsp; &lt;div&gt;, &lt;span&gt;</span></div>
+        <div style="padding:8px 0;"><span style="color:#1B5E3F; font-weight:700;">03.</span> &nbsp;クラスセレクタ <span class="mono" style="font-size:21px;">.xxx</span> &nbsp;+&nbsp; ボックスモデル</div>
+        <div style="padding:8px 0;"><span style="color:#1B5E3F; font-weight:700;">04.</span> &nbsp;<span class="mono" style="font-size:21px;">color &nbsp;/&nbsp; border &nbsp;/&nbsp; display &nbsp;/&nbsp; flex</span> 基礎</div>
+      </div>
+    </div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:1040px; top:830px; width:760px; z-index:10;">
+      <div style="font-size:20px; line-height:1.55; color:#1B5E3F; font-weight:600;">→ 最短ルートで、画面が “必ず動く” を成立させる。</div>
+    </div>
+
+    <!-- Bottom strategic note -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:990px; width:1760px; height:1px; background:#D6D2C4; z-index:1;"></div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:1010px; width:1600px; z-index:10;">
+      <div class="mono" style="font-size:14px; letter-spacing:0.08em; color:#2E2D29; opacity:0.55;">戦略 &nbsp;・&nbsp; サーバー側と連携するために <strong style="color:#1B5E3F;">"データを送る・受け取る"</strong> ための要素だけを取り出す。</div>
+    </div>
+
+    <!-- Page number bottom-right -->
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:1700px; top:1010px; width:140px; text-align:right; z-index:10;">
+      <div class="mono" style="font-size:18px; letter-spacing:0.1em; color:#2E2D29; opacity:0.45;">02 / 08</div>
+    </div>
+
+  </div>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+</body>
+</html>

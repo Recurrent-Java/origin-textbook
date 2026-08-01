@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>効率的な学習ステップとまとめ</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      background: #F4F1E8;
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+      color: #2E2D29;
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .serif {
+      font-family: 'Noto Serif JP', serif;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  </style>
+</head>
+
+<body data-screen-label="08 カリキュラム運用の提案・まとめ">
+
+  <div class="slide-container" style="
+       position:relative;
+       width:1920px;
+       height:1080px;
+       overflow:hidden;
+       background:#F4F1E8;
+     ">
+
+    <!-- =====================================================
+         HEADER
+         07ページ目と統一
+    ====================================================== -->
+    <div data-object="true" data-object-type="textbox" style="
+      position:absolute;
+      left:80px;
+      top:64px;
+      width:1400px;
+      z-index:10;
+    ">
+      <div class="mono" style="
+        font-size:18px;
+        letter-spacing:0.2em;
+        color:#1B5E3F;
+      ">
+        08 &nbsp;・&nbsp; WRAP-UP &nbsp;・&nbsp; 最短で “動く CRUD” に到達する運用
+      </div>
+    </div>
+
+    <!-- ヘッダー下グリーンライン -->
+    <div data-object="true" data-object-type="shape" style="
+      position:absolute;
+      left:80px;
+      top:108px;
+      width:1760px;
+      height:4px;
+      background:#1B5E3F;
+      z-index:1;
+    ">
+    </div>
+
+
+    <!-- =====================================================
+         TITLE
+    ====================================================== -->
+    <div data-object="true" data-object-type="textbox" style="
+      position:absolute;
+      left:80px;
+      top:140px;
+      width:1760px;
+      z-index:10;
+    ">
+      <div class="serif" style="
+        font-size:50px;
+        line-height:1.25;
+        color:#2E2D29;
+        font-weight:700;
+        letter-spacing:-0.02em;
+      ">
+        効率的な学習ステップと
+        <span style="color:#1B5E3F;">まとめ</span>
+      </div>
+    </div>
+
+
+    <!-- =====================================================
+         ROADMAP LABEL
+    ====================================================== -->
+    <div data-object="true" data-object-type="textbox" style="
+      position:absolute;
+      left:80px;
+      top:220px;
+      width:1760px;
+      z-index:10;
+    ">
+      <div class="mono" style="
+        font-size:16px;
+        letter-spacing:0.1em;
+        color:#1B5E3F;
+      ">
+        ROADMAP &nbsp;・&nbsp; HTML/CSS から CRUD までの 3 ステップ
+      </div>
+    </div>
+
+
+    <!-- =====================================================
+         STEP 01
+    ====================================================== -->
+    <div data-object="true" data-object-type="shape" style="
+      position:absolute;
+      left:80px;
+      top:280px;
+      width:540px;
+      height:200px;
+      background:#FFFFFF;
+      border:1px solid #D6D2C4;
+      border-left:6px solid #1B5E3F;
+      z-index:1;
+    ">
+    </div>
+
+    <div data-object="true" data-object-type="textbox" style="
+      position:absolute;
+      left:120px;
+      top:310px;
+      width:480px;
+      z-index:10;
+    ">
+
+      <div class="mono" style="
+        font-size:14px;
+        color:#1B5E3F;
+        letter-spacing:0.08em;
+      ">
+        STEP 01 &nbsp;・&nbsp; 1.0 日
+      </div>
+
+      <div class="serif" style="
+        font-size:28px;
+        color:#2E2D29;
+        font-weight:700;
+        margin-top:4px;
+        line-height:1.3;
+      ">
+        HTML / CSS 基本構造の最小セット
+      </div>
+
+      <div style="
+        font-size:17px;
+        line-height:1.55;
+        color:#2E2D29;
+        opacity:0.82;
+        margin-top:8px;
+      ">
+        今回扱った 8 枚分。<br>
+        “データ入出力に直結する要素” だけを習得する。
+      </div>
+    </div>
+
+
+    <!-- connecting line -->
+    <div style="
+      position:absolute;
+      left:622px;
+      top:360px;
+      width:36px;
+      height:3px;
+      background:#1B5E3F;
+      z-index:1;
+    ">
+    </div>
+
+
+    <!-- =====================================================
+         STEP 02
+    ====================================================== -->
+    <div data-object="true" data-object-type="shape" style="
+      position:absolute;
+      left:660px;
+      top:280px;
+      width:540px;
+      height:200px;
+      background:#FFFFFF;
+      border:1px solid #D6D2C4;
+      border-left:6px solid #E07A2B;
+      z-index:1;
+    ">
+    </div>
+
+    <div data-object="true" data-object-type="textbox" style="
+      position:absolute;
+      left:700px;
+      top:310px;
+      width:480px;
+      z-index:10;
+    ">
+
+      <div class="mono" style="
+        font-size:14px;
+        color:#E07A2B;
+        letter-spacing:0.08em;
+      ">
+        STEP 02 &nbsp;・&nbsp; 0.5 日
+      </div>
+
+      <div class="serif" style="
+        font-size:28px;
+        color:#2E2D29;
+        font-weight:700;
+        margin-top:4px;
+        line-height:1.3;
+      ">
+        静的フォーム &amp; 検索テーブル作成
+      </div>
+
+      <div style="
+        font-size:17px;
+        line-height:1.55;
+        color:#2E2D29;
+        opacity:0.82;
+        margin-top:8px;
+      ">
+        ゴール演習：<br>
+        簡易入力フォーム + 検索結果テーブルを一人で書く。
+      </div>
+    </div>
+
+
+    <!-- connecting line -->
+    <div style="
+      position:absolute;
+      left:1202px;
+      top:360px;
+      width:36px;
+      height:3px;
+      background:#1B5E3F;
+      z-index:1;
+    ">
+    </div>
+
+
+    <!-- =====================================================
+         STEP 03
+    ====================================================== -->
+    <div data-object="true" data-object-type="shape" style="
+      position:absolute;
+      left:1240px;
+      top:280px;
+      width:600px;
+      height:200px;
+      background:#FFFFFF;
+      border:1px solid #D6D2C4;
+      border-left:6px solid #1B5E3F;
+      z-index:1;
+    ">
+    </div>
+
+    <div data-object="true" data-object-type="textbox" style="
+      position:absolute;
+      left:1280px;
+      top:310px;
+      width:540px;
+      z-index:10;
+    ">
+
+      <div class="mono" style="
+        font-size:14px;
+        color:#1B5E3F;
+        letter-spacing:0.08em;
+      ">
+        STEP 03 &nbsp;・&nbsp; NEXT
+      </div>
+
+      <div class="serif" style="
+        font-size:28px;
+        color:#2E2D29;
+        font-weight:700;
+        margin-top:4px;
+        line-height:1.3;
+      ">
+        Spring Boot 連携で CRUD 構築
+      </div>
+
+      <div style="
+        font-size:17px;
+        line-height:1.55;
+        color:#2E2D29;
+        opacity:0.82;
+        margin-top:8px;
+      ">
+        Java / Thymeleaf / Controller で動的化へ。<br>
+        “データの往復” が完成した状態。
+      </div>
+    </div>
+
+
+    <!-- =====================================================
+         LOWER LEFT CARD
+    ====================================================== -->
+    <div data-object="true" data-object-type="shape" style="
+      position:absolute;
+      left:80px;
+      top:520px;
+      width:860px;
+      height:270px;
+      background:#FFFFFF;
+      border:1px solid #D6D2C4;
+      z-index:1;
+    ">
+    </div>
+
+    <div data-object="true" data-object-type="shape" style="
+      position:absolute;
+      left:80px;
+      top:520px;
+      width:860px;
+      height:50px;
+      background:#EFEAE0;
+      z-index:2;
+    ">
+    </div>
+
+    <div data-object="true" data-object-type="textbox" style="
+      position:absolute;
+      left:100px;
+      top:536px;
+      width:820px;
+      z-index:10;
+    ">
+      <div class="mono" style="
+        font-size:16px;
+        letter-spacing:0.1em;
+        color:#E07A2B;
+      ">
+        デザインの省略アプローチ
+      </div>
+    </div>
+
+
+    <div data-object="true" data-object-type="textbox" style="
+      position:absolute;
+      left:100px;
+      top:592px;
+      width:820px;
+      z-index:10;
+    ">
+
+      <div class="serif" style="
+        font-size:24px;
+        color:#2E2D29;
+        font-weight:600;
+        line-height:1.4;
+      ">
+        Bootstrap 等の CSS ライブラリを
+        <span style="color:#E07A2B;">“おまじない”</span>
+        として配布
+      </div>
+
+      <div style="
+        font-size:17px;
+        line-height:1.5;
+        color:#2E2D29;
+        opacity:0.82;
+        margin-top:8px;
+      ">
+        ゼロから CSS を書く時間を節約。<br>
+        “きれいに見える” 部分をライブラリに任せ、
+        最低限の構造理解に集中させる。
+      </div>
+    </div>
+
+
+    <!-- CODE BLOCK -->
+    <div data-object="true" data-object-type="textbox" style="
+      position:absolute;
+      left:100px;
+      top:694px;
+      width:820px;
+      z-index:10;
+    ">
+
+      <div style="
+        height:76px;
+        background:#2E2D29;
+        color:#F4F1E8;
+        padding:10px 14px;
+        border-radius:4px;
+        overflow:hidden;
+      ">
+
+        <pre class="mono"
+          style="
+          font-size:13px;
+          line-height:1.45;
+          margin:0;
+        "><span style="color:#8C8A85;">&lt;!-- 1 行で “それっぽい” 見た目になる --&gt;</span>
+<span style="color:#FFD7A3;">&lt;link</span> <span style="color:#9CDC8C;">rel=</span><span style="color:#FF8C8C;">"stylesheet"</span>
+      <span style="color:#9CDC8C;">href=</span><span style="color:#FF8C8C;">".../bootstrap@5/bootstrap.min.css"</span><span style="color:#FFD7A3;">&gt;</span></pre>
+
+      </div>
+    </div>
+
+
+    <!-- =====================================================
+         LOWER RIGHT CARD
+    ====================================================== -->
+    <div data-object="true" data-object-type="shape" style="
+      position:absolute;
+      left:980px;
+      top:520px;
+      width:860px;
+      height:270px;
+      background:#1B5E3F;
+      z-index:1;
+    ">
+    </div>
+
+    <div data-object="true" data-object-type="textbox" style="
+      position:absolute;
+      left:1005px;
+      top:538px;
+      width:810px;
+      z-index:10;
+    ">
+      <div class="mono" style="
+        font-size:16px;
+        letter-spacing:0.1em;
+        color:#F4F1E8;
+        opacity:0.85;
+      ">
+        CORE TAKEAWAYS &nbsp;・&nbsp; 今日持ち帰る 3 行
+      </div>
+    </div>
+
+
+    <div data-object="true" data-object-type="textbox" style="
+      position:absolute;
+      left:1005px;
+      top:590px;
+      width:810px;
+      z-index:10;
+    ">
+
+      <div style="
+        font-size:20px;
+        line-height:1.45;
+        color:#F4F1E8;
+      ">
+
+        <div style="margin-bottom:11px;">
+          1. &nbsp;覚えるのは
+          <strong style="color:#FFD7A3;">
+            “データ入出力に必要な 10 タグ”
+          </strong>
+          だけ。
+        </div>
+
+        <div style="margin-bottom:11px;">
+          2. &nbsp;CSS は
+          <strong style="color:#FFD7A3;">
+            “margin / padding / flex”
+          </strong>
+          の 3 つで 8 割解決。
+        </div>
+
+        <div>
+          3. &nbsp;属性
+          <span class="mono" style="font-size:19px;">name</span>
+          と Java フィールドを
+          <strong style="color:#FFD7A3;">一致させる</strong>
+          とデータが往復する。
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- RIGHT CARD FOOTER -->
+    <div data-object="true" data-object-type="textbox" style="
+      position:absolute;
+      left:1005px;
+      top:735px;
+      width:810px;
+      z-index:10;
+    ">
+
+      <div style="
+        font-size:16px;
+        line-height:1.4;
+        color:#F4F1E8;
+        opacity:0.86;
+        border-top:1px solid rgba(244,241,232,0.32);
+        padding-top:9px;
+      ">
+        次のステップ →
+        Java / Spring Boot（Thymeleaf）で動的化へ！
+      </div>
+    </div>
+
+
+    <!-- =====================================================
+         OPERATION NOTE
+    ====================================================== -->
+    <div data-object="true" data-object-type="textbox" style="
+      position:absolute;
+      left:80px;
+      top:810px;
+      width:1760px;
+      z-index:10;
+    ">
+
+      <div class="mono" style="
+        font-size:15px;
+        color:#2E2D29;
+        opacity:0.75;
+        line-height:1.6;
+        letter-spacing:0.04em;
+      ">
+
+        <strong style="color:#1B5E3F;">
+          運用の目安：
+        </strong>
+
+        HTML/CSS 講義は
+        <strong>1 日〜 1.5 日</strong>
+        程度に収める。デザイン詳細は Bootstrap で吸収し、
+        Spring 連携へ時間を使う。
+
+      </div>
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER / PROGRESS
+    ====================================================== -->
+    <div data-object="true" data-object-type="shape" style="
+      position:absolute;
+      left:80px;
+      top:865px;
+      width:1760px;
+      height:1px;
+      background:#D6D2C4;
+      z-index:1;
+    ">
+    </div>
+
+    <div data-object="true" data-object-type="textbox" style="
+      position:absolute;
+      left:80px;
+      top:886px;
+      width:1760px;
+      z-index:10;
+    ">
+
+      <div style="
+        display:flex;
+        align-items:center;
+        gap:24px;
+      ">
+
+        <div class="mono" style="
+          font-size:14px;
+          color:#2E2D29;
+          opacity:0.55;
+          white-space:nowrap;
+        ">
+          END &nbsp;・&nbsp; 全 8 枚
+        </div>
+
+        <div style="
+          height:5px;
+          flex:1;
+          background:#EFEAE0;
+          border-radius:3px;
+          position:relative;
+          overflow:hidden;
+        ">
+
+          <div style="
+            position:absolute;
+            left:0;
+            top:0;
+            height:5px;
+            width:100%;
+            background:#1B5E3F;
+            border-radius:3px;
+          ">
+          </div>
+
+        </div>
+
+        <div class="mono" style="
+          font-size:14px;
+          color:#2E2D29;
+          opacity:0.55;
+          white-space:nowrap;
+        ">
+          → Spring Boot へ
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- =====================================================
+         BOTTOM
+    ====================================================== -->
+    <div data-object="true" data-object-type="textbox" style="
+      position:absolute;
+      left:80px;
+      top:1018px;
+      width:1500px;
+      z-index:10;
+    ">
+      <div class="mono" style="
+        font-size:14px;
+        letter-spacing:0.08em;
+        color:#2E2D29;
+        opacity:0.6;
+      ">
+        Good Luck &amp; Keep Coding
+      </div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" style="
+      position:absolute;
+      left:1700px;
+      top:1018px;
+      width:140px;
+      text-align:right;
+      z-index:10;
+    ">
+      <div class="mono" style="
+        font-size:18px;
+        letter-spacing:0.1em;
+        color:#2E2D29;
+        opacity:0.45;
+      ">
+        08 / 08
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

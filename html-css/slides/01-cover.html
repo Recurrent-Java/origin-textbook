@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Spring Boot 開発者のための最低限 HTML&amp;CSS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700;family=Noto+Sans+JP:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #F4F1E8;
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+      color: #2E2D29;
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .serif {
+      font-family: 'Noto Serif JP', serif;
+    }
+  </style>
+</head>
+
+<body data-screen-label="01 表紙">
+  <div class="slide-container"
+    style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#F4F1E8;">
+
+    <!-- Left cardinal block -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute; left:0; top:0; width:760px; height:1080px; background:#1B5E3F; z-index:1;"></div>
+
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute; left:80px; top:120px; width:600px; height:1px; background:rgba(244,241,232,0.35); z-index:1;">
+    </div>
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute; left:80px; top:960px; width:600px; height:1px; background:rgba(244,241,232,0.35); z-index:1;">
+    </div>
+
+    <!-- Course code -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:80px; top:140px; width:600px; z-index:10;">
+      <div class="mono" style="font-size:22px; letter-spacing:0.18em; color:#F4F1E8; opacity:0.85;">Webプログラミング</div>
+    </div>
+
+    <!-- Number giant -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:80px; top:200px; width:600px; height:380px; z-index:10;">
+      <div class="serif"
+        style="font-size:280px; line-height:1; color:#F4F1E8; font-weight:700; letter-spacing:-0.04em;">01</div>
+    </div>
+
+    <!-- Section label -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:80px; top:620px; width:600px; height:220px; z-index:10;">
+      <div class="mono" style="font-size:22px; letter-spacing:0.16em; color:#F4F1E8; opacity:0.85;"></div>
+      <div class="serif" style="font-size:44px; line-height:1.3; color:#F4F1E8; font-weight:600; margin-top:18px;">
+        データ入出力の<br>画面が書ける</div>
+    </div>
+
+    <!-- Bottom meta on cardinal -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:80px; top:880px; width:600px; z-index:10;">
+      <div class="mono" style="font-size:18px; line-height:1.7; color:#F4F1E8; opacity:0.85;">対象 &nbsp;・&nbsp; Java /
+        Spring Boot を学ぶ Web 開発初心者</div>
+      <div style="font-size:18px; line-height:1.7; color:#F4F1E8; opacity:0.85; margin-top:4px;">持ち物 &nbsp;・&nbsp;
+        Eclipse + ブラウザ + &lt;好奇心&gt;</div>
+    </div>
+
+    <!-- Right side: kicker -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:840px; top:120px; width:980px; z-index:10;">
+      <div class="mono" style="font-size:20px; letter-spacing:0.16em; color:#1B5E3F;">第 1 回 &nbsp;・&nbsp; HTML &amp; CSS
+        最小必須</div>
+    </div>
+
+    <!-- Right head title -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:840px; top:170px; width:1040px; height:380px; z-index:10;">
+      <div class="serif"
+        style="font-size:66px; line-height:1.2; color:#2E2D29; font-weight:700; letter-spacing:-0.025em;">Java / Spring
+        Boot の<br>Web アプリ開発者のための<br><span style="color:#1B5E3F;">最低限マスターする HTML &amp; CSS</span></div>
+    </div>
+
+    <!-- Pull-quote rule -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute; left:840px; top:600px; width:1000px; height:6px; background:#1B5E3F; z-index:1;"></div>
+
+    <!-- Pull-quote -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:840px; top:624px; width:1000px; z-index:10;">
+      <div class="serif" style="font-size:30px; line-height:1.5; color:#2E2D29; font-weight:400; font-style:italic;">
+        「凝ったデザインではなく、<br><strong style="font-style:normal; color:#1B5E3F;">"データ入出力が動く画面"</strong> を書けること。<br>今日 8
+        枚で、その最短ルートだけを通ります。」</div>
+    </div>
+
+    <!-- Bottom mini-stack: badges representing logos/illustrations -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:840px; top:850px; width:1000px; z-index:10;">
+      <div class="mono" style="font-size:16px; letter-spacing:0.12em; color:#2E2D29; opacity:0.55; margin-bottom:14px;">
+        CURATED STACK</div>
+      <div style="display:flex; gap:14px; align-items:center;">
+        <div
+          style="display:inline-block; padding:10px 18px; background:#FFFFFF; border:1px solid #D6D2C4; border-radius:4px;">
+          <span class="mono" style="font-size:20px; color:#E07A2B; font-weight:700;">JAVA</span>
+        </div>
+        <div style="font-size:20px; color:#2E2D29; opacity:0.5;">+</div>
+        <div
+          style="display:inline-block; padding:10px 18px; background:#FFFFFF; border:1px solid #D6D2C4; border-radius:4px;">
+          <span class="mono" style="font-size:20px; color:#1B5E3F; font-weight:700;">Spring Boot</span>
+        </div>
+        <div style="font-size:20px; color:#2E2D29; opacity:0.5;">+</div>
+        <div
+          style="display:inline-block; padding:10px 18px; background:#FFFFFF; border:1px solid #D6D2C4; border-radius:4px;">
+          <span class="mono" style="font-size:20px; color:#2E2D29; font-weight:700;">HTML</span>
+        </div>
+        <div style="font-size:20px; color:#2E2D29; opacity:0.5;">+</div>
+        <div
+          style="display:inline-block; padding:10px 18px; background:#FFFFFF; border:1px solid #D6D2C4; border-radius:4px;">
+          <span class="mono" style="font-size:20px; color:#2E2D29; font-weight:700;">CSS</span>
+        </div>
+        <div style="font-size:20px; color:#2E2D29; opacity:0.5;">+</div>
+        <div
+          style="display:inline-block; padding:10px 18px; background:#FFFFFF; border:1px solid #D6D2C4; border-radius:4px;">
+          <span class="mono" style="font-size:20px; color:#2E2D29; font-weight:700;">DB</span>
+        </div>
+        <div style="font-size:20px; color:#2E2D29; opacity:0.5;">→</div>
+        <div style="display:inline-block; padding:10px 18px; background:#1B5E3F; border-radius:4px;">
+          <span style="font-size:20px; color:#F4F1E8; font-weight:600;">Webアプリケーションシステム</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer credit -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:840px; top:1010px; width:1000px; z-index:10;">
+      <div class="mono" style="font-size:14px; letter-spacing:0.1em; color:#2E2D29; opacity:0.45;">リカレント福岡校
+        &nbsp;・&nbsp;2026</div>
+    </div>
+
+  </div>
+  <script type="module"
+    src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496"
+    integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ=="
+    data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}'
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

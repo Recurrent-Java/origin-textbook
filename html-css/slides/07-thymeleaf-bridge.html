@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Java（Spring Boot）へ繋げる「属性」の理解</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; padding:0; overflow:hidden; background:#F4F1E8; font-family:'Noto Sans JP','Inter',sans-serif; color:#2E2D29; }
+  .mono { font-family:'JetBrains Mono', monospace; }
+  .serif { font-family:'Noto Serif JP', serif; }
+</style>
+</head>
+<body data-screen-label="07 Thymeleaf 連携のポイント">
+  <div class="slide-container" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#F4F1E8;">
+
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:64px; width:1400px; z-index:10;">
+      <div class="mono" style="font-size:18px; letter-spacing:0.2em; color:#1B5E3F;">07 &nbsp;・&nbsp; 橋渡し &nbsp;・&nbsp; Java / Spring Boot と繋ぐ “属性” の使い方</div>
+    </div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:1700px; top:1018px; width:140px; z-index:10; text-align:right;">
+      <div class="mono" style="font-size:18px; letter-spacing:0.1em; color:#2E2D29; opacity:0.45;">07 / 08</div>
+    </div>
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:108px; width:1760px; height:4px; background:#1B5E3F; z-index:1;"></div>
+
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1760px; z-index:10;">
+      <div class="serif" style="font-size:50px; line-height:1.25; color:#2E2D29; font-weight:700; letter-spacing:-0.02em;">Java（Spring Boot）へ繋げる<span style="color:#1B5E3F;">「属性」</span>の理解</div>
+    </div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:220px; width:1760px; z-index:10;">
+      <div style="font-size:22px; line-height:1.5; color:#2E2D29; opacity:0.78;">HTML の “属性” を理解すると、Thymeleaf の世界が一気に読み解ける。<br><span class="mono" style="font-size:21px;">th:field</span> ／ <span class="mono" style="font-size:21px;">th:action</span> は HTML 属性の仕組みを “拡張” したものにすぎない。</div>
+    </div>
+
+    <!-- ===== 3 columns: HTML — flow — Java ===== -->
+
+    <!-- Column 1: HTML attribute -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:320px; width:520px; height:640px; background:#FFFFFF; border:1px solid #D6D2C4; z-index:1;"></div>
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:320px; width:520px; height:50px; background:#EFEAE0; z-index:2;"></div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:336px; width:480px; z-index:10;">
+      <div class="mono" style="font-size:16px; letter-spacing:0.1em; color:#1B5E3F;">HTML &nbsp;・&nbsp; 属性の正体</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:400px; width:480px; z-index:10;">
+      <div style="font-size:18px; line-height:1.55; color:#2E2D29;"><strong>属性 (attribute)</strong> は “タグに付ける追加情報”。</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:470px; width:480px; z-index:10;">
+      <div class="mono" style="font-size:20px; color:#1B5E3F; margin-bottom:6px;">id &nbsp;/&nbsp; class</div>
+      <div style="font-size:16px; color:#2E2D29; opacity:0.85;">CSS や JavaScript からの “識別子”。</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:560px; width:480px; z-index:10;">
+      <div class="mono" style="font-size:20px; color:#1B5E3F; margin-bottom:6px;">name &nbsp;/&nbsp; value</div>
+      <div style="font-size:16px; color:#2E2D29; opacity:0.85;">サーバーに送る “キーと値” のペア。</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:650px; width:480px; z-index:10;">
+      <div style="background:#2E2D29; color:#F4F1E8; padding:14px 16px; border-radius:4px;">
+        <pre class="mono" style="font-size:16px; line-height:1.55; margin:0;"><span style="color:#FFD7A3;">&lt;input</span> <span style="color:#9CDC8C;">type=</span><span style="color:#FF8C8C;">"text"</span>
+       <span style="color:#9CDC8C;">name=</span><span style="color:#FF8C8C;">"username"</span>
+       <span style="color:#9CDC8C;">value=</span><span style="color:#FF8C8C;">"taro"</span><span style="color:#FFD7A3;">&gt;</span></pre>
+      </div>
+    </div>
+
+    <!-- Column 2: Flow (arrow between) -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:620px; top:500px; width:680px; height:280px; background:#FFFFFF; border:1px dashed #C9D8C9; z-index:1;"></div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:640px; top:516px; width:640px; text-align:center; z-index:10;">
+      <div class="mono" style="font-size:16px; color:#1B5E3F; letter-spacing:0.1em;">REQUEST PAYLOAD &nbsp;・&nbsp; name=username がキーになる</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:660px; top:564px; width:600px; z-index:10;">
+      <div style="background:#FAF7EE; border:1px solid #C9D8C9; padding:18px; border-radius:4px;">
+        <pre class="mono" style="font-size:18px; line-height:1.6; color:#2E2D29; margin:0;">username = taro
+password = ●●●●●●●●
+comment  = よろしくお願いします</pre>
+      </div>
+    </div>
+
+    <!-- Arrow indicators -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:600px; top:622px; width:22px; height:3px; background:#1B5E3F; z-index:5;"></div>
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:1300px; top:622px; width:22px; height:3px; background:#1B5E3F; z-index:5;"></div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:660px; top:700px; width:600px; text-align:center; z-index:10;">
+      <div style="font-size:14px; color:#2E2D29; opacity:0.7;">HTML の name 属性 → そのまま Java Form クラスのフィールド名 と一致</div>
+    </div>
+
+    <!-- Column 3: Java Controller -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:1320px; top:320px; width:520px; height:640px; background:#FFFFFF; border:1px solid #D6D2C4; z-index:1;"></div>
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:1320px; top:320px; width:520px; height:50px; background:#EFEAE0; z-index:2;"></div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:1340px; top:336px; width:480px; z-index:10;">
+      <div class="mono" style="font-size:16px; letter-spacing:0.1em; color:#1B5E3F;">JAVA &nbsp;・&nbsp; Spring Controller</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:1340px; top:400px; width:480px; z-index:10;">
+      <div style="font-size:18px; line-height:1.55; color:#2E2D29;">Form クラスのフィールド名が<br>そのまま “送られてくるキー” と一致する。</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:1340px; top:486px; width:480px; z-index:10;">
+      <div style="background:#2E2D29; color:#F4F1E8; padding:14px 16px; border-radius:4px;">
+        <pre class="mono" style="font-size:14px; line-height:1.55; margin:0;"><span style="color:#7C7A75;">// UserForm.java</span>
+<span style="color:#FFD7A3;">public class</span> <span style="color:#7CC4A3;">UserForm</span> <span style="color:#FFD7A3;">{</span>
+  <span style="color:#FFD7A3;">private</span> String <span style="color:#9CDC8C;">username</span>; <span style="color:#7C7A75;">// name と一致</span>
+  <span style="color:#FFD7A3;">private</span> String <span style="color:#9CDC8C;">password</span>;
+  <span style="color:#FFD7A3;">private</span> String <span style="color:#9CDC8C;">comment</span>;
+<span style="color:#FFD7A3;">}</span></pre>
+      </div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:1340px; top:684px; width:480px; z-index:10;">
+      <div style="background:#1B5E3F; color:#F4F1E8; padding:14px 16px; border-radius:4px;">
+        <pre class="mono" style="font-size:15px; line-height:1.55; margin:0;"><span style="color:#FFD7A3;">@PostMapping</span>(<span style="color:#FF8C8C;">"/users/save"</span>)
+<span style="color:#FFD7A3;">public</span> String <span style="color:#7CC4A3;">save</span>(<span style="color:#9CDC8C;">@ModelAttribute</span> UserForm f) {
+  <span style="color:#7C7A75;">// f.username / f.password で受け取れる</span>
+}</pre>
+      </div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:1340px; top:848px; width:480px; z-index:10;">
+      <div style="font-size:16px; color:#1B5E3F; font-weight:600; line-height:1.55;">Spring が name → フィールド を自動対応してくれる。</div>
+    </div>
+
+    <!-- bottom: Thymeleaf -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:880px; width:560px; height:90px; background:#2E2D29; border-radius:6px; z-index:3;"></div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:894px; width:510px; z-index:10;">
+      <div class="mono" style="font-size:14px; color:#FFD7A3; letter-spacing:0.06em; margin-bottom:6px;">THYMELEAF BONUS</div>
+      <pre class="mono" style="font-size:16px; line-height:1.5; color:#F4F1E8; margin:0;"><span style="color:#FFD7A3;">&lt;input</span> <span style="color:#FF8C8C;">th:field</span>=<span style="color:#FF8C8C;">"*{username}"</span><span style="color:#FFD7A3;">&gt;</span></pre>
+      <div style="font-size:14px; color:#7C7A75; margin-top:2px;">→ id / name / value を一括生成</div>
+    </div>
+
+    <!-- bottom takeaway -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:1000px; width:1760px; height:1px; background:#D6D2C4; z-index:1;"></div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:1018px; width:1600px; z-index:10;">
+      <div class="mono" style="font-size:14px; letter-spacing:0.08em; color:#2E2D29; opacity:0.6;">ポイント &nbsp;・&nbsp; <strong style="color:#1B5E3F;">HTML の属性</strong> が分かれば、<strong style="color:#1B5E3F;">Thymeleaf </strong>は怖くない。<span class="mono" style="font-size:13px;">th:xxx</span> は属性の “拡張版” にすぎない。</div>
+    </div>
+
+  </div>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+</body>
+</html>

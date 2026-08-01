@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>スタイルの基本ルールと余白の概念</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; padding:0; overflow:hidden; background:#F4F1E8; font-family:'Noto Sans JP','Inter',sans-serif; color:#2E2D29; }
+  .mono { font-family:'JetBrains Mono', monospace; }
+  .serif { font-family:'Noto Serif JP', serif; }
+</style>
+</head>
+<body data-screen-label="05 CSSセレクタとボックスモデル">
+  <div class="slide-container" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#F4F1E8;">
+
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:64px; width:1400px; z-index:10;">
+      <div class="mono" style="font-size:18px; letter-spacing:0.2em; color:#1B5E3F;">05 &nbsp;・&nbsp; 必修 CSS ① &nbsp;・&nbsp; セレクタと “余白の概念”</div>
+    </div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:1700px; top:1018px; width:140px; z-index:10; text-align:right;">
+      <div class="mono" style="font-size:18px; letter-spacing:0.1em; color:#2E2D29; opacity:0.45;">05 / 08</div>
+    </div>
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:108px; width:1760px; height:4px; background:#1B5E3F; z-index:1;"></div>
+
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1760px; z-index:10;">
+      <div class="serif" style="font-size:50px; line-height:1.25; color:#2E2D29; font-weight:700; letter-spacing:-0.02em;">スタイルの基本ルールと <span style="color:#1B5E3F;">余白の概念</span></div>
+    </div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:220px; width:1760px; z-index:10;">
+      <div style="font-size:22px; line-height:1.5; color:#2E2D29; opacity:0.78;">CSS の 9 割は「どの要素に（セレクタ）」「どんな余白を（ボックスモデル）」決める仕事。ここを制する。</div>
+    </div>
+
+    <!-- ===== Left: Selector ===== -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:300px; width:680px; height:680px; background:#FFFFFF; border:1px solid #D6D2C4; z-index:1;"></div>
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:300px; width:680px; height:50px; background:#EFEAE0; z-index:2;"></div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:316px; width:620px; z-index:10;">
+      <div class="mono" style="font-size:16px; letter-spacing:0.1em; color:#2E2D29; opacity:0.65;">1. セレクタ &nbsp;・&nbsp; “誰を” 装飾するか</div>
+    </div>
+
+    <!-- CSS source -->
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:380px; width:620px; z-index:10;">
+      <div class="mono" style="font-size:14px; color:#1B5E3F; margin-bottom:6px;">CSS FILE &nbsp;・&nbsp; style.css</div>
+      <div style="background:#2E2D29; color:#F4F1E8; padding:18px 20px; border-radius:6px;">
+        <pre class="mono" style="font-size:17px; line-height:1.55; margin:0;"><span style="color:#7C7A75;">/* クラスで指定する */</span>
+<span style="color:#9CDC8C;">.btn</span>   <span style="color:#FFD7A3;">{</span> <span style="color:#9CDC8C;">padding</span>: <span style="color:#B5CEA8;">10px</span>;
+        <span style="color:#9CDC8C;">background</span>: <span style="color:#FF8C8C;">#1B5E3F</span>; <span style="color:#FFD7A3;">}</span>
+<span style="color:#9CDC8C;">.error</span> <span style="color:#FFD7A3;">{</span> <span style="color:#9CDC8C;">color</span>: <span style="color:#FF8C8C;">#B04830</span>;
+        <span style="color:#9CDC8C;">border</span>: <span style="color:#B5CEA8;">1px</span> solid <span style="color:#FF8C8C;">#B04830</span>; <span style="color:#FFD7A3;">}</span>
+</pre>
+      </div>
+    </div>
+
+<!-- 3 cards -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:660px; width:600px; z-index:10;">
+    <div class="mono" style="font-size:15px; color:#1B5E3F; letter-spacing:0.06em; margin-bottom:14px;">使う 3 種類</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px;">
+      <div style="background:#FAF7EE; border:1.5px solid #1B5E3F; padding:14px; text-align:center;">
+        <div class="mono" style="font-size:24px; color:#1B5E3F; font-weight:700;">.xxx</div>
+        <div style="font-size:14px; color:#2E2D29; margin-top:6px;">クラス指定</div>
+        <div style="font-size:12px; color:#2E2D29; opacity:0.6; margin-top:2px;">最もよく使う</div>
+      </div>
+      <div style="background:#FAF7EE; border:1.5px solid #2E2D29; padding:14px; text-align:center;">
+        <div class="mono" style="font-size:24px; color:#2E2D29; font-weight:700;">#xxx</div>
+        <div style="font-size:14px; color:#2E2D29; margin-top:6px;">ID 指定</div>
+        <div style="font-size:12px; color:#2E2D29; opacity:0.6; margin-top:2px;">1 ページに 1 個</div>
+      </div>
+      <div style="background:#FAF7EE; border:1.5px solid #B04830; padding:14px; text-align:center;">
+        <div class="mono" style="font-size:24px; color:#B04830; font-weight:700;">tag</div>
+        <div style="font-size:14px; color:#2E2D29; margin-top:6px;">タグ指定</div>
+        <div style="font-size:12px; color:#2E2D29; opacity:0.6; margin-top:2px;">table, p…</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:850px; width:600px; z-index:10;">
+    <div style="font-size:18px; line-height:1.55; color:#2E2D29;">クラス <span class="mono" style="font-size:17px;">.btn</span> を覚えておけば、業務画面の 8 割はカバーできる。</div>
+  </div>
+
+    <!-- ===== Right: Box Model diagram ===== -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:800px; top:300px; width:1040px; height:680px; background:#FFFFFF; border:1px solid #D6D2C4; z-index:1;"></div>
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:800px; top:300px; width:1040px; height:50px; background:#EFEAE0; z-index:2;"></div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:820px; top:316px; width:1000px; z-index:10;">
+      <div class="mono" style="font-size:16px; letter-spacing:0.1em; color:#2E2D29; opacity:0.65;">2. ボックスモデル &nbsp;・&nbsp; “余白の 4 層構造”</div>
+    </div>
+
+    <!-- Diagram: nested rectangles -->
+    <!-- Margin (outermost) -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:880px; top:430px; width:780px; height:380px; background:#E8DCC8; z-index:2;"></div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:880px; top:380px; width:780px; text-align:center; z-index:10;">
+      <div class="mono" style="font-size:18px; color:#7A5A2E; letter-spacing:0.06em;">margin &nbsp;・&nbsp; <span style="font-size:14px; opacity:0.8;">外の余白（他の要素との間隔）</span></div>
+    </div>
+
+    <!-- Border -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:920px; top:470px; width:700px; height:300px; background:#FAE5C8; border:3px solid #B04830; z-index:3;"></div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:920px; top:438px; width:700px; text-align:center; z-index:10;">
+      <div class="mono" style="font-size:18px; color:#B04830; letter-spacing:0.06em;">border &nbsp;・&nbsp; <span style="font-size:14px; opacity:0.8;">枠線</span></div>
+    </div>
+
+    <!-- Padding -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:510px; width:620px; height:220px; background:#FFEFC8; z-index:4;"></div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:960px; top:480px; width:620px; text-align:center; z-index:10;">
+      <div class="mono" style="font-size:18px; color:#8E6E25; letter-spacing:0.06em;">padding &nbsp;・&nbsp; <span style="font-size:14px; opacity:0.8;">内の余白（枠線とテキストの間隔）</span></div>
+    </div>
+
+    <!-- Content -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:1000px; top:550px; width:540px; height:140px; background:#1B5E3F; z-index:5;"></div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:1000px; top:550px; width:540px; height:140px; display:flex; align-items:center; justify-content:center; z-index:10;">
+      <div class="serif" style="font-size:28px; color:#F4F1E8; font-weight:600;">content &nbsp;・&nbsp; 内容</div>
+    </div>
+
+    <!-- Right labels with arrows -->
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:1670px; top:560px; width:160px; z-index:10;">
+      <div style="font-size:14px; color:#1B5E3F; line-height:1.45;">
+        ← <strong>margin</strong><br>他の要素との距離
+      </div>
+      <div style="font-size:14px; color:#B04830; line-height:1.45; margin-top:14px;">
+        ← <strong>border</strong><br>枠線（必須要素）
+      </div>
+      <div style="font-size:14px; color:#8E6E25; line-height:1.45; margin-top:14px;">
+        ← <strong>padding</strong><br>内側の余白
+      </div>
+    </div>
+
+    <!-- bottom: magic spell -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:820px; top:830px; width:1000px; height:120px; background:#2E2D29; border-radius:6px; z-index:3;"></div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:850px; top:842px; width:940px; z-index:10;">
+      <div class="mono" style="font-size:14px; color:#FFD7A3; letter-spacing:0.06em; margin-bottom:6px;">LAYOUT-KILLER SPELL &nbsp;・&nbsp; サイズ計算のズレを防ぐ</div>
+      <pre class="mono" style="font-size:22px; line-height:1.5; color:#F4F1E8; margin:0;"><span style="color:#FFD7A3;">*</span> <span style="color:#FFD7A3;">{</span> <span style="color:#9CDC8C;">box-sizing</span>: <span style="color:#FF8C8C;">border-box</span>; <span style="color:#FFD7A3;">}</span>   <span style="color:#7C7A75;">/* ← まず書く。おまじない。 */</span></pre>
+    </div>
+
+    <!-- bottom takeaway -->
+    <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:1000px; width:1760px; height:1px; background:#D6D2C4; z-index:1;"></div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:1018px; width:1600px; z-index:10;">
+      <div class="mono" style="font-size:14px; letter-spacing:0.08em; color:#2E2D29; opacity:0.6;">ポイント &nbsp;・&nbsp; 余白を制する者がレイアウトを制する。<strong style="color:#1B5E3F;"> margin </strong>= 外 ／ <strong style="color:#1B5E3F;"> padding </strong>= 内 ／ <strong style="color:#1B5E3F;"> border-box </strong>= 計算ズレ防止。</div>
+    </div>
+
+  </div>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+</body>
+</html>

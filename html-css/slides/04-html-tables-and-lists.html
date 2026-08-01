@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>データを魅せる！テーブルと一覧タグ</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #F4F1E8;
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+      color: #2E2D29;
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .serif {
+      font-family: 'Noto Serif JP', serif;
+    }
+  </style>
+</head>
+
+<body data-screen-label="04 データを魅せる！テーブルと一覧タグ">
+  <div class="slide-container"
+    style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#F4F1E8;">
+
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:80px; top:64px; width:1400px; z-index:10;">
+      <div class="mono" style="font-size:18px; letter-spacing:0.2em; color:#1B5E3F;">04 &nbsp;・&nbsp; 必修 HTML ②
+        &nbsp;・&nbsp; データ表示・遷移・グルーピング</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:1700px; top:1018px; width:140px; z-index:10; text-align:right;">
+      <div class="mono" style="font-size:18px; letter-spacing:0.1em; color:#2E2D29; opacity:0.45;">04 / 08</div>
+    </div>
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute; left:80px; top:108px; width:1760px; height:4px; background:#1B5E3F; z-index:1;"></div>
+
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:80px; top:140px; width:1760px; z-index:10;">
+      <div class="serif"
+        style="font-size:50px; line-height:1.25; color:#2E2D29; font-weight:700; letter-spacing:-0.02em;">データを魅せる！ <span
+          style="color:#1B5E3F;">テーブルと一覧</span>タグ</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:80px; top:220px; width:1760px; z-index:10;">
+      <div style="font-size:22px; line-height:1.5; color:#2E2D29; opacity:0.78;">DB の結果セットを “一覧画面”
+        として人間に見せる。&lt;table&gt; と &lt;a&gt; が書ければ業務画面の 8 割はできる。</div>
+    </div>
+
+    <!-- Left: DB → table illustration -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute; left:80px; top:300px; width:860px; height:680px; background:#FFFFFF; border:1px solid #D6D2C4; z-index:1;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:100px; top:316px; width:820px; z-index:10;">
+      <div class="mono" style="font-size:16px; letter-spacing:0.1em; color:#2E2D29; opacity:0.65;">DB &nbsp;→&nbsp; 一覧画面
+        &nbsp;・&nbsp; FLOW</div>
+    </div>
+
+    <!-- DB icon block -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute; left:120px; top:380px; width:200px; height:140px; background:#2E2D29; border-radius:6px; z-index:1;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:120px; top:412px; width:200px; text-align:center; z-index:10;">
+      <div style="font-size:36px; color:#F4F1E8; line-height:1;">🗄</div>
+      <div class="mono" style="font-size:14px; color:#F4F1E8; margin-top:6px; letter-spacing:0.06em;">users テーブル</div>
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:120px; top:540px; width:200px; z-index:10;">
+      <pre class="mono" style="font-size:13px; line-height:1.4; color:#2E2D29; margin:0; font-weight:500;">id | name   | dept
+---+--------+--------
+1  | 山田太郎 | 開発部
+2  | 鈴木花子 | 営業部
+3  | 佐藤健一 | 開発部</pre>
+    </div>
+
+    <!-- Arrow -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute; left:340px; top:444px; width:120px; height:3px; background:#1B5E3F; z-index:1;"></div>
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute; left:444px; top:434px; width:0; height:0; border-left:19px solid #1B5E3F; border-top:12px solid transparent; border-bottom:11px solid transparent; z-index:1;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:340px; top:472px; width:120px; text-align:center; z-index:10;">
+      <div class="mono" style="font-size:13px; color:#1B5E3F; letter-spacing:0.06em;">loop render</div>
+    </div>
+
+    <!-- Web table mock -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute; left:480px; top:380px; width:440px; height:520px; background:#FFFFFF; border:2px solid #2E2D29; z-index:1;">
+    </div>
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute; left:481px; top:381px; width:440px; height:50px; background:#1B5E3F; z-index:2;"></div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:480px; top:390px; width:440px; text-align:center; z-index:10;">
+      <div style="font-size:20px; color:#F4F1E8; font-weight:600;">ユーザー一覧</div>
+    </div>
+
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute; left:481px; top:430px; width:440px; height:50px; background:#EFEAE0; z-index:2;"></div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:480px; top:430px; width:440px; z-index:10;">
+      <div style="display:grid; grid-template-columns:60px 200px 180px; height:50px; align-items:center;">
+        <div style="text-align:center; font-size:16px; color:#2E2D29; font-weight:600; border-right:1px solid #D6D2C4;">
+          ID</div>
+        <div style="text-align:center; font-size:16px; color:#2E2D29; font-weight:600; border-right:1px solid #D6D2C4;">
+          氏名</div>
+        <div style="text-align:center; font-size:16px; color:#2E2D29; font-weight:600;">部署</div>
+      </div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:481px; top:480px; width:440px; z-index:10;">
+      <div
+        style="height:60px; display:grid; grid-template-columns:60px 200px 180px; align-items:center; border-bottom:1px solid #EFEAE0;">
+        <div style="text-align:center; font-size:16px; color:#2E2D29;">1</div>
+        <div style="text-align:center; font-size:16px; color:#2E2D29;">山田 太郎</div>
+        <div style="text-align:center; font-size:16px; color:#2E2D29;">開発部</div>
+      </div>
+      <div
+        style="height:60px; display:grid; grid-template-columns:60px 200px 180px; align-items:center; border-bottom:1px solid #EFEAE0; background:#FAF7EE;">
+        <div style="text-align:center; font-size:16px; color:#2E2D29;">2</div>
+        <div style="text-align:center; font-size:16px; color:#1B5E3F; font-weight:600; text-decoration:underline;">鈴木 花子
+        </div>
+        <div style="text-align:center; font-size:16px; color:#2E2D29;">営業部</div>
+      </div>
+      <div style="height:60px; display:grid; grid-template-columns:60px 200px 180px; align-items:center;">
+        <div style="text-align:center; font-size:16px; color:#2E2D29;">3</div>
+        <div style="text-align:center; font-size:16px; color:#2E2D29;">佐藤 健一</div>
+        <div style="text-align:center; font-size:16px; color:#2E2D29;">開発部</div>
+      </div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:480px; top:780px; width:440px; text-align:center; z-index:10;">
+      <div class="mono" style="font-size:14px; color:#2E2D29; opacity:0.6;">&lt;table&gt; &nbsp;+&nbsp; 行ごとに &lt;tr&gt;
+        / &lt;td&gt;</div>
+    </div>
+
+    <!-- Right: 4 tag cards -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute; left:980px; top:300px; width:860px; height:680px; background:#FFFFFF; border:1px solid #D6D2C4; z-index:1;">
+    </div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:1000px; top:316px; width:820px; z-index:10;">
+      <div class="mono" style="font-size:16px; letter-spacing:0.1em; color:#2E2D29; opacity:0.65;">タグ 4 種類 &nbsp;・&nbsp;
+        これが書ければ一覧 OK</div>
+    </div>
+
+    <!-- 4 tag rows -->
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:1000px; top:362px; width:820px; z-index:10;">
+      <div class="mono" style="font-size:22px; color:#1B5E3F; font-weight:700;">&lt;table&gt; &lt;tr&gt; &lt;th&gt;
+        &lt;td&gt;</div>
+      <div style="font-size:18px; line-height:1.55; color:#2E2D29; opacity:0.82; margin-top:6px;">DB
+        検索結果や一覧画面の表示に必須。<span class="mono" style="font-size:17px;">th</span> は見出しセル、<span class="mono"
+          style="font-size:17px;">td</span> はデータセル。</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:1000px; top:464px; width:820px; z-index:10;">
+      <div class="mono" style="font-size:22px; color:#1B5E3F; font-weight:700;">&lt;ul&gt; &lt;li&gt;</div>
+      <div style="font-size:18px; line-height:1.55; color:#2E2D29; opacity:0.82; margin-top:6px;">エラーメッセージや箇条書き。<span
+          class="mono" style="font-size:17px;">ul</span> = 順序なしリスト、<span class="mono" style="font-size:17px;">ol</span>
+        は順序あり。</div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:1000px; top:566px; width:820px; z-index:10;">
+      <div class="mono" style="font-size:22px; color:#1B5E3F; font-weight:700;">&lt;a&gt;</div>
+      <div style="font-size:18px; line-height:1.55; color:#2E2D29; opacity:0.82; margin-top:6px;">画面遷移・処理の呼び出し。サーバー側の
+        GET 系エンドポイントを <span class="mono" style="font-size:17px;">href</span> に書く。</div>
+      <div style="margin-top:8px; background:#2E2D29; padding:10px 14px; border-radius:4px;">
+        <pre class="mono"
+          style="font-size:16px; line-height:1.5; color:#F4F1E8; margin:0;"><span style="color:#FFD7A3;">&lt;a</span> <span style="color:#9CDC8C;">href=</span><span style="color:#FF8C8C;">"/users/2"</span><span style="color:#FFD7A3;">&gt;</span>詳細を見る<span style="color:#FFD7A3;">&lt;/a&gt;</span></pre>
+      </div>
+    </div>
+
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:1000px; top:740px; width:820px; z-index:10;">
+      <div class="mono" style="font-size:22px; color:#1B5E3F; font-weight:700;">&lt;div&gt; &nbsp;/&nbsp; &lt;span&gt;
+      </div>
+      <div style="font-size:18px; line-height:1.55; color:#2E2D29; opacity:0.82; margin-top:6px;"><span class="mono"
+          style="font-size:17px;">div</span> = ブロック要素（行を占有）／ <span class="mono" style="font-size:17px;">span</span> =
+        インライン要素（文中の一部）。要素を“まとめる箱”。</div>
+    </div>
+
+    <!-- bottom takeaway -->
+    <div data-object="true" data-object-type="shape"
+      style="position:absolute; left:80px; top:1000px; width:1760px; height:1px; background:#D6D2C4; z-index:1;"></div>
+    <div data-object="true" data-object-type="textbox"
+      style="position:absolute; left:80px; top:1018px; width:1600px; z-index:10;">
+      <div class="mono" style="font-size:14px; letter-spacing:0.08em; color:#2E2D29; opacity:0.6;">ポイント &nbsp;・&nbsp;
+        一覧は <strong style="color:#1B5E3F;">table</strong>、遷移は <strong style="color:#1B5E3F;">a</strong>、まとめたい範囲は <strong
+          style="color:#1B5E3F;">div / span</strong>。これだけで SPA 以外の業務画面の 8 割が書ける。</div>
+    </div>
+
+  </div>
+  <script type="module"
+    src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496"
+    integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ=="
+    data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}'
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
